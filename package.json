@@ -1,24 +1,30 @@
 {
   "name": "elbrus-alumni-project",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
   "scripts": {
-    "start": "node ./app.js",
-    "dev": "nodemon ./app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/re-mark/elbrus-alumni-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/re-mark/elbrus-alumni-project/issues"
+  },
+  "homepage": "https://github.com/re-mark/elbrus-alumni-project#readme",
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "express": "~4.16.1",
-    "hbs": "~4.0.4",
     "handlebars": "^4.7.6",
     "hbs": "^4.1.1",
     "http-errors": "^1.6.3",
     "mongoose": "^5.9.21",
     "morgan": "~1.9.1"
-  },
-  "devDependencies": {
-    "eslint": "^7.4.0",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.0"
   }
 }
