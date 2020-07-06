@@ -2,20 +2,18 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-
-const indexRouter = require('./routes/index');
-
-const usersRouter = require('./routes/userRouter');
-
+const mongoose = require('mongoose');
+require('dotenv').config();
 
 const app = express();
-
 // Подключаем mongoose.
-const mongoose = require("mongoose");
-mongoose.connect('mongodb://localhost:27017/user_elbrus', {
+mongoose.connect(process.env.DB_CONNECTION, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
 });
+
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/userRouter');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -29,7 +27,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Подключаем ручки
 // Reg
-app.use('/', indexRouter);
 app.use('/register', usersRouter);
+// main
+app.use('/', indexRouter);
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
