@@ -5,6 +5,8 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+// Ручка регистрации
+const regRouter = require('./routes/regRouter.js');
 
 const app = express();
 
@@ -18,6 +20,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Подключаем ручки
+// Reg
+app.use('/reg', regRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
