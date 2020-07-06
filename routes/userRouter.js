@@ -1,7 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
+const { registerDecorator } = require('handlebars');
 
+
+// ручка регистрации
 router.post('/newUser', async (req, res) => {
 
     const newUser = new User({ 
@@ -27,5 +30,47 @@ router.post('/newUser', async (req, res) => {
     res.redirect('/') // изменить
   })
   
+  // ручка профиля
+  router.get('/:id', async (req, res) => {
+    console.log(req.params.id);
+    const result = await User.findOne({"_id": req.params.id});
+    res.render('userProfile', { // ---- рендерить на страницу профиля
+        name: result.name,
+        surname: result.surname,
+        nickname: result.nickname,
+        email: result.email,
+        phone: result.phone,
+        location: result.location,
+        Location_chenge: result.Location_chenge,
+        job: result.job,
+        gitHub_link: result.gitHub_link,
+        linkedin_link: result.linkedin_link,
+        abou_user: result.abou_user,
+        projects: result.projects,
+        skils: result.skils,
+    })
+  })
+  
+// редактировать запись
+  router.get('/change/:id', async function (req, res) {
+  const result = await Entry.findOne({ "_id": req.params.id });
+  res.render('register', {  // --- рендерить на форму регистрации
+    name: result.name,
+    surname: result.surname,
+    nickname: result.nickname,
+    email: result.email,
+    phone: result.phone,
+    location: result.location,
+    Location_chenge: result.Location_chenge,
+    job: result.job,
+    gitHub_link: result.gitHub_link,
+    linkedin_link: result.linkedin_link,
+    abou_user: result.abou_user,
+    projects: result.projects,
+    skils: result.skils,
+  })
+})
+
+
 
 module.exports = router;

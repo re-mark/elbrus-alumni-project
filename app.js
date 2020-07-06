@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Подключаем ручки
 // Reg
 app.use('/', indexRouter);
-app.use('/register', usersRouter);
+app.use('/user', usersRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
