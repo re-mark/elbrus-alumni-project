@@ -69,10 +69,10 @@ passport.use(new LocalStrategy(
   },
 ));
 
-app.use((req, res, next) => {
-  console.log(req.session);
-  next();
-});
+// app.use((req, res, next) => {
+//   console.log(req.session);
+//   next();
+// });
 
 // Подключаем ручки
 // main
