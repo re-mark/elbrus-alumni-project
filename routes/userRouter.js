@@ -1,9 +1,10 @@
 const express = require('express');
-const router = express.Router();
 const User = require('../models/user');
 
+const router = express.Router();
+
 router.post('/newUser', async (req, res) => {
-  const newUser = new User({ 
+  const newUser = new User({
     name: req.body.name,
     surname: req.body.surname,
     nickname: req.body.nickname,
