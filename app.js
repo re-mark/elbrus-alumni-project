@@ -30,6 +30,7 @@ mongoose.connect(process.env.DB_CONNECTION, {
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/userRouter');
 const loginRouter = require('./routes/loginRouter');
+const registrationRouter = require('./routes/registration');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -81,9 +82,8 @@ app.use('/', indexRouter);
 app.use('/register', usersRouter);
 // Login
 app.use('/login', loginRouter);
-
-
-
+app.use('/users', usersRouter);
+app.use('/registration', registrationRouter);
 
 
 
