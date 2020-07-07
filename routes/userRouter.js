@@ -1,8 +1,8 @@
 const express = require('express');
-const router = express.Router();
 const User = require('../models/user');
 const { registerDecorator } = require('handlebars');
 
+const router = express.Router();
 
 // ручка регистрации
 router.post('/newUser', async (req, res) => {
@@ -71,6 +71,7 @@ router.post('/newUser', async (req, res) => {
   })
 })
 
+
 // поиск по локации
 router.get('/find/:location', async function (req, res) {
   const result = await User.find({ "location": req.params.location});
@@ -112,8 +113,5 @@ router.get('/find/:name', async function (req, res) {
     skils: result.skils,
   })
 })
-
-
-
 
 module.exports = router;
