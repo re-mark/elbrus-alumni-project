@@ -53,8 +53,8 @@ router.post('/newUser', async (req, res) => {
   
 // редактировать запись
   router.get('/change/:id', async function (req, res) {
-  const result = await Entry.findOne({ "_id": req.params.id });
-  res.render('register', {  // --- рендерить на форму регистрации
+  const result = await User.findOne({ "_id": req.params.id });
+  res.render('register', {  // --- рендерить на форму регистрации (в форме прописать value)
     name: result.name,
     surname: result.surname,
     nickname: result.nickname,
@@ -70,6 +70,49 @@ router.post('/newUser', async (req, res) => {
     skils: result.skils,
   })
 })
+
+// поиск по локации
+router.get('/find/:location', async function (req, res) {
+  const result = await User.find({ "location": req.params.location});
+  
+  res.render('index', { // рендерить на основную страницу 
+    name: result.name,
+    surname: result.surname,
+    nickname: result.nickname,
+    email: result.email,
+    phone: result.phone,
+    location: result.location,
+    Location_chenge: result.Location_chenge,
+    job: result.job,
+    gitHub_link: result.gitHub_link,
+    linkedin_link: result.linkedin_link,
+    abou_user: result.abou_user,
+    projects: result.projects,
+    skils: result.skils,
+  })
+})
+
+// поиск по фамилии
+router.get('/find/:name', async function (req, res) {
+  const result = await User.findOne({ "surname": req.params.surname});
+  
+  res.render('index', { // рендерить на основную страницу 
+    name: result.name,
+    surname: result.surname,
+    nickname: result.nickname,
+    email: result.email,
+    phone: result.phone,
+    location: result.location,
+    Location_chenge: result.Location_chenge,
+    job: result.job,
+    gitHub_link: result.gitHub_link,
+    linkedin_link: result.linkedin_link,
+    abou_user: result.abou_user,
+    projects: result.projects,
+    skils: result.skils,
+  })
+})
+
 
 
 

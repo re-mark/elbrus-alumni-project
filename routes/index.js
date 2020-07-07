@@ -7,6 +7,9 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-
+// тестовая ручка
+router.get('/reg', function(req, res, next) {
+  res.render('register');
+});
 
 module.exports = router;
