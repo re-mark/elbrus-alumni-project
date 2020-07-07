@@ -79,10 +79,10 @@ passport.use(new LocalStrategy(
 // main
 app.use('/', indexRouter);
 // Reg
-app.use('/register', registrationRouter);
+app.use('/registr', registrationRouter);
 // Login
 app.use('/login', loginRouter);
-app.use('/users', usersRouter);
+app.use('/user', usersRouter);
 
 // Поднимаем сервер
 app.listen(process.env.PORT || 3000);
