@@ -19,9 +19,9 @@ router.post('/newUser', async (req, res) => {
         job: req.body.job,
         gitHub_link: req.body.gitHub_link,
         linkedin_link: req.body.linkedin_link,
-        abou_user: req.body.abou_user,
+        about_user: req.body.about_user,
         projects: req.body.projects,
-        skils: req.body.skils,
+        skills: req.body.skills,
         admin: req.body.admin,
         admin_phrase: req.body.admin_phrase
     });
@@ -45,16 +45,16 @@ router.post('/newUser', async (req, res) => {
         job: result.job,
         gitHub_link: result.gitHub_link,
         linkedin_link: result.linkedin_link,
-        abou_user: result.abou_user,
+        about_user: result.about_user,
         projects: result.projects,
-        skils: result.skils,
+        skills: result.skills,
     })
   })
   
 // редактировать запись
   router.get('/change/:id', async function (req, res) {
   const result = await User.findOne({ "_id": req.params.id });
-  res.render('register', {  // --- рендерить на форму регистрации (в форме прописать value)
+  res.render('registration', {  // --- рендерить на форму регистрации (в форме прописать value)
     name: result.name,
     surname: result.surname,
     nickname: result.nickname,
@@ -65,9 +65,9 @@ router.post('/newUser', async (req, res) => {
     job: result.job,
     gitHub_link: result.gitHub_link,
     linkedin_link: result.linkedin_link,
-    abou_user: result.abou_user,
+    about_user: result.about_user,
     projects: result.projects,
-    skils: result.skils,
+    skills: result.skills,
   })
 })
 
@@ -87,9 +87,9 @@ router.get('/find/:location', async function (req, res) {
     job: result.job,
     gitHub_link: result.gitHub_link,
     linkedin_link: result.linkedin_link,
-    abou_user: result.abou_user,
+    about_user: result.about_user,
     projects: result.projects,
-    skils: result.skils,
+    skills: result.skills,
   })
 })
 
@@ -108,9 +108,9 @@ router.get('/find/:name', async function (req, res) {
     job: result.job,
     gitHub_link: result.gitHub_link,
     linkedin_link: result.linkedin_link,
-    abou_user: result.abou_user,
+    about_user: result.about_user,
     projects: result.projects,
-    skils: result.skils,
+    skills: result.skills,
   })
 })
 

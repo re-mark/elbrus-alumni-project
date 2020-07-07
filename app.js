@@ -88,7 +88,7 @@ function authMiddleware() {
 // main
 app.use('/', indexRouter);
 // Reg
-app.use('/register', registrationRouter);
+app.use('/registr', registrationRouter);
 // Login
 app.use('/login', loginRouter);
 // Users
