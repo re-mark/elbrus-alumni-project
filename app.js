@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const session = require('express-session');
-const sha256  = require('sha256');
+const sha256 = require('sha256');
 
 // Passport.js
 const passport = require('passport');
@@ -79,7 +79,7 @@ passport.use(new LocalStrategy(
 // main
 app.use('/', indexRouter);
 // Reg
-app.use('/reg', registrationRouter);
+app.use('/register', registrationRouter);
 // Login
 app.use('/login', loginRouter);
 app.use('/users', usersRouter);
