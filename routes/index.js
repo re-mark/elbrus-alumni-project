@@ -6,11 +6,11 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/', async (req, res) => {
-  const alumniCards = await User.find();
-  console.log(alumniCards);
+  const alumnisArray = await User.find();
+  console.log(alumnisArray);
   
 
-  res.render('index');
+  res.render('index', { alumnisArray });
 });
 
 // тестовая ручка

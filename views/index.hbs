@@ -19,7 +19,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-              href="/register">Регистрация</a>
+              href="/reg">Регистрация</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
               href="/login">Логин</a>
@@ -58,48 +58,15 @@
       <!-- Portfolio Grid Items-->
       <div class="row justify-content-center">
         <!-- Portfolio Items-->
+      {{#each alumnisArray}}
         <div class="col-md-6 col-lg-4 mb-5">
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal0">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
               <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-            </div><img class="img-fluid" src="" alt="Log Cabin" />
+            </div><p>{{this.name}}</p>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4 mb-5">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-            </div><img class="img-fluid" src="" alt="Tasty Cake" />
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-5">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-            </div><img class="img-fluid" src="" alt="Circus Tent" />
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-5">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-            </div><img class="img-fluid" src="" alt="Controller" />
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-5">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-            </div><img class="img-fluid" src="" alt="Locked Safe" />
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-5">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-            </div><img class="img-fluid" src="" alt="Submarine" />
-          </div>
-        </div>
+      {{/each}}
       </div>
     </div>
   </section>
@@ -339,7 +306,7 @@
             href="https://www.facebook.com/elbrusbootcamp"><i class="fab fa-fw fa-facebook-f"></i></a><a
             class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/elbrus.bootcamp/"><i
               class="fab fa-instagram"></i></a><a class="btn btn-outline-light btn-social mx-1"
-            href=""><i class="fab fa-fw fa-linkedin-in"></i></a><a
+            href="https://ru.linkedin.com/company/elbrus-coding-bootcamp"><i class="fab fa-fw fa-linkedin-in"></i></a><a
             class="btn btn-outline-light btn-social mx-1" href="https://vk.com/elbrusbootcamp"><i
               class="fab fa-vk"></i></a>
         </div>
