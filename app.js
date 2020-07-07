@@ -79,11 +79,10 @@ passport.use(new LocalStrategy(
 // main
 app.use('/', indexRouter);
 // Reg
-app.use('/register', usersRouter);
+app.use('/reg', registrationRouter);
 // Login
 app.use('/login', loginRouter);
 app.use('/users', usersRouter);
-app.use('/registration', registrationRouter);
 
 
 
