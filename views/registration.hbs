@@ -40,18 +40,18 @@
         <div class="divider-custom-line"></div>
       </div>
       <!-- Masthead Subheading-->
-      <form>
+      <form action="/user/newUser" method="post">
         <div class="form-row">
           <div class="col-md-4 mb-3">
             <label for="validationServer01">Имя</label>
-            <input type="text" class="form-control is-invalid" id="validationServer01" placeholder="Имя" required>
+            <input type="text" name="name" value="{{name}}" class="form-control is-invalid" id="validationServer01" placeholder="Имя" required>
             <div class="invalid-feedback">
               Пожалуйста введите имя!
             </div>
           </div>
           <div class="col-md-4 mb-3">
             <label for="validationServer02">Фамилия</label>
-            <input type="text" class="form-control is-invalid" id="validationServer02" placeholder="Фамилия" required>
+            <input type="text" name="surname" value="{{surname}}" class="form-control is-invalid" id="validationServer02" placeholder="Фамилия" required>
             <div class="invalid-feedback">
               Пожалуйста введите фамилию!
             </div>
@@ -62,7 +62,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroupPrepend3">@</span>
               </div>
-              <input type="text" class="form-control is-invalid" id="validationServerUsername"
+              <input type="text" name="nickname" value="{{nickname}}" class="form-control is-invalid" id="validationServerUsername"
                 placeholder="Имя пользователя" aria-describedby="inputGroupPrepend3" required>
               <div class="invalid-feedback">
                 Пожалуйста введите никнейм!
@@ -73,7 +73,7 @@
         <div class="form-row">
           <div class="col-md-6 mb-3">
             <label for="inputPassword6">Пароль</label>
-            <input type="password" id="inputPassword6" class="form-control mx-sm-3"
+            <input type="password" name="password" value="{{password}}" id="inputPassword6" class="form-control mx-sm-3"
               aria-describedby="passwordHelpInline">
             <small id="passwordHelpInline" class="text-muted">
               Должен быть 8-20 символов в длину.
@@ -88,7 +88,7 @@
         <div class="form-row">
           <div class="col-md-6 mb-3">
             <label for="validationServer03">Email</label>
-            <input type="text" class="form-control is-invalid" id="validationServer03" placeholder="Email" required>
+            <input type="text" name="email" value="{{email}}" class="form-control is-invalid" id="validationServer03" placeholder="Email" required>
             <div class="invalid-feedback">
               Пожалуйста введите почту!
             </div>
@@ -97,7 +97,7 @@
         <div class="form-row">
           <div class="col-md-6 mb-3">
             <label for="validationServer03">Телефон</label>
-            <input type="tel" class="form-control is-invalid" id="phone" name="phone" placeholder="+7 (999) 99 99 999">
+            <input type="tel" name="phone" value="{{phone}}" class="form-control is-invalid" id="phone" name="phone" placeholder="+7 (999) 99 99 999">
             <div class="invalid-feedback">
               Пожалуйста введите телефон!
             </div>
@@ -106,7 +106,7 @@
         <div class="form-row">
           <div class="col-md-6 mb-3">
             <label for="validationServer03">Местоположение</label>
-            <input type="text" class="form-control is-invalid" id="validationServer03" placeholder="Город и т. д." required>
+            <input type="text" name="location" value="{{location}}" class="form-control is-invalid" id="validationServer03" placeholder="Город и т. д." required>
             <div class="invalid-feedback">
               Пожалуйста введите местоположение!
             </div>
@@ -114,14 +114,14 @@
         </div>
         <div class="form-row">
           <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheckDisabled" required>
-            <label class="custom-control-label" for="customCheckDisabled">Сейчас работаю</label>
+            <input type="checkbox" name="job" value="{{job}}" class="custom-control-input" id="customCheckDisabled" required>
+            <label class="custom-control-label" for="customCheckDisabled">В поиске работы</label>
           </div>
         </div>
         <div class="form-row">
           <div class="col-md-6 mb-3">
             <label for="validationServer03">Ссылка на ГитХаб</label>
-            <input type="url" class="form-control is-invalid" id="validationServer03" placeholder="github.com" required>
+            <input type="url" name="gitHub_link" value="{{gitHub_link}}" class="form-control is-invalid" id="validationServer03" placeholder="github.com" required>
             <div class="invalid-feedback">
               Пожалуйста введите ссылку на Гит!
             </div>
@@ -130,7 +130,7 @@
         <div class="form-row">
           <div class="col-md-6 mb-3">
             <label for="validationServer03">Ссылка на ЛинкедИН</label>
-            <input type="url" class="form-control is-invalid" id="validationServer03" placeholder="linkedin.com" required>
+            <input type="url" name="linkedin_link" value="{{linkedin_link}}" class="form-control is-invalid" id="validationServer03" placeholder="linkedin.com" required>
             <div class="invalid-feedback">
               Пожалуйста введите ссылку на ЛинкедИН!
             </div>
@@ -140,7 +140,7 @@
           <div class="col-md-6 mb-3">
             <label for="validationServer03">О себе</label>
             <div class="col-xs-5">
-              <textarea class="form-control"></textarea>
+              <textarea name="about_user" class="form-control">{{about_user}}</textarea>
             </div>
             <div class="invalid-feedback">
               Пожалуйста расскажите о себе!
@@ -151,7 +151,7 @@
           <div class="col-md-6 mb-3">
             <label for="validationServer03">Опыт участия в проектах</label>
             <div class="col-xs-5">
-              <textarea class="form-control"></textarea>
+              <textarea name="projects" class="form-control">{{projects}}</textarea>
             </div>
             <div class="invalid-feedback">
               Пожалуйста расскажите про опыт в проектах!
@@ -162,7 +162,7 @@
           <div class="col-md-6 mb-3">
             <label for="validationServer03">Навыки и умения(скилы)</label>
             <div class="col-xs-5">
-              <textarea class="form-control"></textarea>
+              <textarea name="skills" class="form-control">{{skills}}</textarea>
             </div>
             <div class="invalid-feedback">
               Пожалуйста опишите ваши навыки и умения!

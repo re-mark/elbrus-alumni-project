@@ -13,9 +13,6 @@ router.get('/', async (req, res) => {
   res.render('index', { alumnisArray });
 });
 
-// тестовая ручка
-router.get('/reg', function(req, res, next) {
-  res.render('register');
-});
+
 
 module.exports = router;
