@@ -85,10 +85,5 @@ app.use('/login', loginRouter);
 app.use('/users', usersRouter);
 app.use('/registration', registrationRouter);
 
-
-
-
-
-
 // Поднимаем сервер
 app.listen(process.env.PORT || 3000);
