@@ -75,6 +75,15 @@ passport.use(new LocalStrategy(
 //   next();
 // });
 
+function authMiddleware() {
+  return function(req, res, next) {
+    if (req.isAuthenticated()) {
+      return next();
+    }
+    res.redirect('/login');
+  };
+}
+
 // Подключаем ручки
 // main
 app.use('/', indexRouter);
@@ -82,6 +91,7 @@ app.use('/', indexRouter);
 app.use('/register', registrationRouter);
 // Login
 app.use('/login', loginRouter);
+// Users
 app.use('/users', usersRouter);
 
 // Поднимаем сервер
