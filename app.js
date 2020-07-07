@@ -1,14 +1,36 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const mongoose = require('mongoose');
+const session = require('express-session');
+const sha256  = require('sha256');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var registrationRouter = require('./routes/registration');
+// Passport.js
+const passport = require('passport');
+const passportSession = require('passport-session');
+const LocalStrategy = require('passport-local').Strategy;
 
-var app = express();
+// dotenv
+require('dotenv').config();
+
+// user model
+const User = require('./models/user.js');
+
+// create new express app
+const app = express();
+
+// Подключаем mongoose.
+mongoose.connect(process.env.DB_CONNECTION, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+// Routes
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/userRouter');
+const loginRouter = require('./routes/loginRouter');
+const registrationRouter = require('./routes/registration');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -20,24 +42,53 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// express-session
+app.use(session({
+  secret: 'askdfenadf',
+  resave: false,
+  saveUninitialized: false,
+}));
+
+// Passport.js
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(new LocalStrategy(
+  (username, password, done) => {
+    const hashPass = sha256(password);
+
+    User.findOne({ nickname: username }, (err, user) => {
+      if (err) { return done(err); }
+      if (!user) {
+        return done(null, false, { message: 'Incorrect username.' });
+      }
+      if (user.password !== hashPass) {
+        return done(null, false, { message: 'Incorrect password.' });
+      }
+      return done(null, user);
+    });
+  },
+));
+
+// app.use((req, res, next) => {
+//   console.log(req.session);
+//   next();
+// });
+
+// Подключаем ручки
+// main
 app.use('/', indexRouter);
+// Reg
+app.use('/register', usersRouter);
+// Login
+app.use('/login', loginRouter);
 app.use('/users', usersRouter);
 app.use('/registration', registrationRouter);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
 
-module.exports = app;
+
+
+// Поднимаем сервер
+app.listen(process.env.PORT || 3000);
