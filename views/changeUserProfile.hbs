@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>{{title}}</title>
+  <title>Редактировать профиль</title>
 </head>
 
 <body id="page-top">
@@ -41,7 +41,7 @@
         <div class="divider-custom-line"></div>
       </div>
       <!-- Masthead Subheading-->
-      <form action="/user/change" method="post">
+      <form action="/users/change" method="post">
         <div class="form-row">
           <div class="col-md-4 mb-3">
             <label for="validationServer01">Имя</label>
@@ -123,7 +123,7 @@
         <div class="form-row">
           <div class="col-md-6 mb-3">
             <label for="validationServer03">Ссылка на ГитХаб</label>
-            <input type="url" name="gitHub_link" value="{{gitHub_link}}" class="form-control is-invalid" id="validationServer03" placeholder="github.com" required>
+            <input type="url" name="gitHub_link" value="{{gitHub_link}}" class="form-control is-invalid" id="validationServer03" placeholder="github.com" {{!-- required --}}>
             <div class="invalid-feedback">
               Пожалуйста введите ссылку на Гит!
             </div>
@@ -132,7 +132,7 @@
         <div class="form-row">
           <div class="col-md-6 mb-3">
             <label for="validationServer03">Ссылка на ЛинкедИН</label>
-            <input type="url" name="linkedin_link" value="{{linkedin_link}}" class="form-control is-invalid" id="validationServer03" placeholder="linkedin.com" required>
+            <input type="url" name="linkedin_link" value="{{linkedin_link}}" class="form-control is-invalid" id="validationServer03" placeholder="linkedin.com" {{!-- required --}}>
             <div class="invalid-feedback">
               Пожалуйста введите ссылку на ЛинкедИН!
             </div>
