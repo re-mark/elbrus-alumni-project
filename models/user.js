@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
   skills: String,
   admin: Boolean,
   admin_phrase: String,
-  avatar: String
+  avatar: String,
 });
 
 module.exports = mongoose.model('User', userSchema);
