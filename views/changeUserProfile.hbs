@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>{{title}}</title>
+</head>
+
+<body id="page-top">
+  <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+    <div class="container"><a class="navbar-brand js-scroll-trigger" href="/"><img id="brandImage"
+          src="/images/logoelbrus.svg" alt=""></a>
+      <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button"
+        data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+              href="">Регистрация</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+              href="">Логин</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+      <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5" src="/images/logoelbrus.svg" alt="">
+      <!-- Masthead Heading-->
+      <h1 class="masthead-heading mb-0">Изменить профиль</h1><br>
+      <h5>{{name}} {{surname}}</h5>
+      <!-- Icon Divider-->
+      <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-angle-down"></i></div>
+        <div class="divider-custom-line"></div>
+      </div>
+      <!-- Masthead Subheading-->
+      <form action="/user/change" method="post">
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="validationServer01">Имя</label>
+            <input type="text" name="name" value="{{name}}" class="form-control is-invalid" id="validationServer01" placeholder="Имя" required>
+            <div class="invalid-feedback">
+              Пожалуйста введите имя!
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationServer02">Фамилия</label>
+            <input type="text" name="surname" value="{{surname}}" class="form-control is-invalid" id="validationServer02" placeholder="Фамилия" required>
+            <div class="invalid-feedback">
+              Пожалуйста введите фамилию!
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationServerUsername">Имя пользователя</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend3">@</span>
+              </div>
+              <input type="text" name="nickname" value="{{nickname}}" class="form-control is-invalid" id="validationServerUsername"
+                placeholder="Имя пользователя" aria-describedby="inputGroupPrepend3" required>
+              <div class="invalid-feedback">
+                Пожалуйста введите никнейм!
+              </div>
+            </div>
+          </div>
+        </div>
+        <input type="hidden" name="_id" value="{{_id}}" class="form-control is-invalid"><br> {{!-- скрытое поле для id --}}
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="inputPassword6">Пароль</label>
+            <input type="password" name="password" value="{{password}}" id="inputPassword6" class="form-control mx-sm-3"
+              aria-describedby="passwordHelpInline">
+            <small id="passwordHelpInline" class="text-muted">
+              Должен быть 8-20 символов в длину.
+            </small>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="inputPassword6">Повторно пароль</label>
+            <input type="password" id="inputPassword6" class="form-control mx-sm-3"
+              aria-describedby="passwordHelpInline">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="validationServer03">Email</label>
+            <input type="text" name="email" value="{{email}}" class="form-control is-invalid" id="validationServer03" placeholder="Email" required>
+            <div class="invalid-feedback">
+              Пожалуйста введите почту!
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="validationServer03">Телефон</label>
+            <input type="tel" name="phone" value="{{phone}}" class="form-control is-invalid" id="phone" name="phone" placeholder="+7 (999) 99 99 999">
+            <div class="invalid-feedback">
+              Пожалуйста введите телефон!
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="validationServer03">Местоположение</label>
+            <input type="text" name="location" value="{{location}}" class="form-control is-invalid" id="validationServer03" placeholder="Город и т. д." required>
+            <div class="invalid-feedback">
+              Пожалуйста введите местоположение!
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" name="job" value="{{job}}" class="custom-control-input" id="customCheckDisabled" required>
+            <label class="custom-control-label" for="customCheckDisabled">В поиске работы</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="validationServer03">Ссылка на ГитХаб</label>
+            <input type="url" name="gitHub_link" value="{{gitHub_link}}" class="form-control is-invalid" id="validationServer03" placeholder="github.com" required>
+            <div class="invalid-feedback">
+              Пожалуйста введите ссылку на Гит!
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="validationServer03">Ссылка на ЛинкедИН</label>
+            <input type="url" name="linkedin_link" value="{{linkedin_link}}" class="form-control is-invalid" id="validationServer03" placeholder="linkedin.com" required>
+            <div class="invalid-feedback">
+              Пожалуйста введите ссылку на ЛинкедИН!
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="validationServer03">О себе</label>
+            <div class="col-xs-5">
+              <textarea name="about_user" class="form-control">{{about_user}}</textarea>
+            </div>
+            <div class="invalid-feedback">
+              Пожалуйста расскажите о себе!
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="validationServer03">Опыт участия в проектах</label>
+            <div class="col-xs-5">
+              <textarea name="projects" class="form-control">{{projects}}</textarea>
+            </div>
+            <div class="invalid-feedback">
+              Пожалуйста расскажите про опыт в проектах!
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="validationServer03">Навыки и умения(скилы)</label>
+            <div class="col-xs-5">
+              <textarea name="skills" class="form-control">{{skills}}</textarea>
+            </div>
+            <div class="invalid-feedback">
+              Пожалуйста опишите ваши навыки и умения!
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" for="customFile">Choose file</label>
+          </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Изменить профиль</button>
+    </form>
+    </div>
+  </header>
+  <footer class="footer text-center">
+    <div class="container">
+      <div class="row">
+        <!-- Footer Location-->
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <h4 class="mb-4">Мы находимся:</h4>
+          <p class="pre-wrap lead mb-0">Москва, м. Ленинский проспект, ул. Вавилова 1 </p>
+        </div>
+        <!-- Footer Social Icons-->
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <h4 class="mb-4">В социальных сетях:</h4><a class="btn btn-outline-light btn-social mx-1"
+            href="https://www.facebook.com/elbrusbootcamp"><i class="fab fa-fw fa-facebook-f"></i></a><a
+            class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/elbrus.bootcamp/"><i
+              class="fab fa-instagram"></i></a><a class="btn btn-outline-light btn-social mx-1" href=""><i
+              class="fab fa-fw fa-linkedin-in"></i></a><a class="btn btn-outline-light btn-social mx-1"
+            href="https://vk.com/elbrusbootcamp"><i class="fab fa-vk"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Copyright Section-->
+  <section class="copyright py-4 text-center text-white">
+    <div class="container"><small class="pre-wrap">Copyright © elbrusboot.camp 2020 </small></div>
+  </section>
+  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+  <div class="scroll-to-top d-lg-none position-fixed"><a
+      class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i
+        class="fa fa-chevron-up"></i></a></div>
+</body>
+
+</html>

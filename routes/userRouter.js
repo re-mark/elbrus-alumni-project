@@ -1,6 +1,7 @@
 const express = require('express');
 const User = require('../models/user');
 const { registerDecorator } = require('handlebars');
+const { db } = require('../models/user');
 
 const router = express.Router();
 
@@ -27,7 +28,7 @@ router.post('/newUser', async (req, res) => {
     });
   
     await newUser.save();
-    res.redirect('/') // изменить
+    res.redirect('/') // изменить на страницу профиля
   })
   
   // ручка профиля
@@ -51,10 +52,11 @@ router.post('/newUser', async (req, res) => {
     })
   })
   
-// редактировать запись
+// получаем данные для редактирования записи
   router.get('/change/:id', async function (req, res) {
   const result = await User.findOne({ "_id": req.params.id });
-  res.render('registration', {  // --- рендерить на форму регистрации (в форме прописать value)
+  res.render('changeUserProfile', {  // --- рендерить на форму редактирования
+    _id: result._id,
     name: result.name,
     surname: result.surname,
     nickname: result.nickname,
@@ -70,6 +72,26 @@ router.post('/newUser', async (req, res) => {
     skills: result.skills,
   })
 })
+// обновляем изменненную запись
+router.post('/change', async function (req, res) {
+    await User.update({ "_id": req.body._id}, {
+    name: req.body.name,
+    surname: req.body.surname,
+    nickname: req.body.nickname,
+    email: req.body.email,
+    phone: req.body.phone,
+    location: req.body.location,
+    Location_chenge: req.body.Location_chenge,
+    job: req.body.job,
+    gitHub_link: req.body.gitHub_link,
+    linkedin_link: req.body.linkedin_link,
+    about_user: req.body.about_user,
+    projects: req.body.projects,
+    skills: req.body.skills,
+  });
+  res.redirect('/') // изменить на страницу профиля
+});
+
 
 
 // поиск по локации
