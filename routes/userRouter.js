@@ -54,8 +54,18 @@ router.post('/newUser', async (req, res) => {
   // ручка профиля
   router.get('/:id', async (req, res) => {
     console.log(req.params.id);
+
+    let username;
+    let auth = false;
+    if (req.isAuthenticated()) {
+      auth = true;
+      username = req.session.passport.user.name;
+    }
+
     const result = await User.findOne({_id: req.params.id});
     res.render('profile', { // ---- рендерить на страницу профиля
+        auth,
+        username,
         _id: result._id,
         name: result.name,
         surname: result.surname,
@@ -76,7 +86,17 @@ router.post('/newUser', async (req, res) => {
 // получаем данные для редактирования записи
   router.get('/change/:id', async function (req, res) {
   const result = await User.findOne({ "_id": req.params.id });
+
+  let username;
+  let auth = false;
+  if (req.isAuthenticated()) {
+    auth = true;
+    username = req.session.passport.user.name;
+  }
+
   res.render('changeUserProfile', {  // --- рендерить на форму редактирования
+    auth,
+    username,
     _id: result._id,
     name: result.name,
     surname: result.surname,
