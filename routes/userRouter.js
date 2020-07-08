@@ -1,4 +1,5 @@
 const express = require('express');
+const sha256 = require('sha256');
 const User = require('../models/user');
 const { registerDecorator } = require('handlebars');
 const { db } = require('../models/user');
@@ -7,13 +8,12 @@ const router = express.Router();
 
 // ручка регистрации
 router.post('/newUser', async (req, res) => {
-
-    const newUser = new User({ 
+    const newUser = new User({
         name: req.body.name,
         surname: req.body.surname,
         nickname: req.body.nickname,
         email: req.body.email,
-        password: req.body.password,
+        password: sha256(req.body.password),
         phone: req.body.phone,
         location: req.body.location,
         Location_chenge: req.body.Location_chenge,
@@ -34,7 +34,7 @@ router.post('/newUser', async (req, res) => {
   // ручка профиля
   router.get('/:id', async (req, res) => {
     console.log(req.params.id);
-    const result = await User.findOne({"_id": req.params.id});
+    const result = await User.findOne({_id: req.params.id});
     res.render('userProfile', { // ---- рендерить на страницу профиля
         name: result.name,
         surname: result.surname,
