@@ -40,7 +40,7 @@
         <div class="divider-custom-line"></div>
       </div>
       <!-- Masthead Subheading-->
-      <form action="/users/newUser" method="post">
+      <form encType="multipart/form-data" action="/users/newUser" method="post">
         <div class="form-row">
           <div class="col-md-4 mb-3">
             <label for="validationServer01">Имя</label>
@@ -171,7 +171,7 @@
         </div>
         <div class="form-row">
           <div class="custom-file">
-            <input type="file" class="custom-file-input" id="customFile">
+            <input type="file" name="fileFoto" class="custom-file-input" id="customFile">
             <label class="custom-file-label" for="customFile">Choose file</label>
           </div>
         </div>
