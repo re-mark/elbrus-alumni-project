@@ -24,7 +24,7 @@ router.post('/newUser', async (req, res) => {
   }
 })
 
-    const {name, surname, nickname} = reg.body;
+    const {name, surname, nickname} = req.body;
 
     const newUser = new User({ 
         name,
