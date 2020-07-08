@@ -9,6 +9,8 @@ const router = express.Router();
 
 // ручка регистрации
 router.post('/newUser', async (req, res) => {
+
+
   const fileFoto = req.files.fileFoto;
   const fileName = fileFoto.name;
   const photoAvatar = (fileName + req.body.surname + '.jpg');
@@ -22,10 +24,12 @@ router.post('/newUser', async (req, res) => {
   }
 })
 
+    const {name, surname, nickname} = req.body;
+
     const newUser = new User({ 
-        name: req.body.name,
-        surname: req.body.surname,
-        nickname: req.body.nickname,
+        name,
+        surname,
+        nickname,
         email: req.body.email,
         password: sha256(req.body.password),
         phone: req.body.phone,
@@ -62,6 +66,7 @@ router.post('/newUser', async (req, res) => {
     res.render('profile', { // ---- рендерить на страницу профиля
         auth,
         username,
+        _id: result._id,
         name: result.name,
         surname: result.surname,
         nickname: result.nickname,
@@ -97,6 +102,7 @@ router.post('/newUser', async (req, res) => {
     surname: result.surname,
     nickname: result.nickname,
     email: result.email,
+    password: result.password,
     phone: result.phone,
     location: result.location,
     Location_chenge: result.Location_chenge,
@@ -115,6 +121,7 @@ router.post('/change', async function (req, res) {
     surname: req.body.surname,
     nickname: req.body.nickname,
     email: req.body.email,
+    password: req.body.password,
     phone: req.body.phone,
     location: req.body.location,
     Location_chenge: req.body.Location_chenge,

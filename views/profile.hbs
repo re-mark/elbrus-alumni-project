@@ -76,7 +76,8 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit"/>
+                        <a href="change/{{_id}}">РЕДАКТИРОВАТЬ ПРОФИЛЬ</a>
+                        {{!-- <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit"/> --}}
                     </div>
                 </div>
                 <div class="row">
@@ -88,12 +89,6 @@
                             <a href=""><i class="fab fa-fw fa-github"></i></a><br/>
                             <a href=""><i class="fab fa-fw fa-facebook-f"></i></a><br/>
                             <a href=""><i class="fab fa-vk"></i></a><br/>
-                            <p>Скиллы</p>
-                            <a href="">Web Designer</a><br/>
-                            <a href="">Web Developer</a><br/>
-                            <a href="">WordPress</a><br/>
-                            <a href="">WooCommerce</a><br/>
-                            <a href="">PHP, .Net</a><br/>
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -104,7 +99,7 @@
                                                 <label>Имя пользователя</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Raydman</p>
+                                                <p>{{nickname}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -112,7 +107,7 @@
                                                 <label>Имя</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Дима</p>
+                                                <p>{{name}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -120,7 +115,7 @@
                                                 <label>Фамилия</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Бочок</p>
+                                                <p>{{surname}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -128,7 +123,7 @@
                                                 <label>Email</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>vasyapupkin@elbrus.com</p>
+                                                <p>{{email}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -136,7 +131,7 @@
                                                 <label>Телефон</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>123 456 7890</p>
+                                                <p>{{phone}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -144,7 +139,15 @@
                                                 <label>Местонахождение</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Иркутск</p>
+                                                <p>{{location}}</p>
+                                            </div>
+                                        </div>
+                                         <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Имею навыки работы с:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{skills}}</p>
                                             </div>
                                         </div>
                             </div>
@@ -154,23 +157,23 @@
                                                 <label>О себе</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Я разработчик................</p>
+                                                <p>{{about_user}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Опыт участия в проектах</label>
+                                                <label>Проекты</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Огромный опыт</p>
+                                                <p>{{projects}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Готов работать</label>
+                                                <label>В поиске работы:</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Да</p>
+                                                <p>{{job}}</p>
                                             </div>
                                         </div>
                             </div>
