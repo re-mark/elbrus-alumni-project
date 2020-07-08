@@ -121,8 +121,28 @@ const newUser5 = new User({
   admin_phrase: 'NaN',
 });
 
+const admin = new User({
+  name: 'admin',
+  surname: 'admin',
+  nickname: 'admin',
+  email: 'test@test.ru',
+  password: sha256('123'),
+  phone: '11-11-11',
+  location: 'Moscow',
+  Location_change: true,
+  job: true,
+  gitHub_link: 'James.github.com',
+  linkedin_link: 'James.linkedin.com',
+  about_user: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+  projects: 'cool proj',
+  skills: 'JS, Express.js, React, Redux',
+  admin: true,
+  admin_phrase: 'NaN',
+});
+
 const users = [];
 
+admin.save();
 newUser.save()
   .then(user => users.push(user));
 newUser1.save()

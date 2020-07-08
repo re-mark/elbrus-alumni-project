@@ -74,6 +74,9 @@
             <p>Телефон: {{this.phone}}</p>
             <p>Мои навыки: {{this.skills}}</p>
             <button formaction="/users/{{this.id}}">Открыть профиль</button>
+            {{#if this.admin}}
+            <button formaction="/users/">Редактировать профиль</button>
+            {{/if}}
           </div>
         </div>
       {{/each}}

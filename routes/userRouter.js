@@ -6,8 +6,7 @@ const router = express.Router();
 
 // ручка регистрации
 router.post('/newUser', async (req, res) => {
-
-    const newUser = new User({ 
+    const newUser = new User({
         name: req.body.name,
         surname: req.body.surname,
         nickname: req.body.nickname,
@@ -33,7 +32,7 @@ router.post('/newUser', async (req, res) => {
   // ручка профиля
   router.get('/:id', async (req, res) => {
     console.log(req.params.id);
-    const result = await User.findOne({"_id": req.params.id});
+    const result = await User.findOne({_id: req.params.id});
     res.render('userProfile', { // ---- рендерить на страницу профиля
         name: result.name,
         surname: result.surname,
