@@ -103,7 +103,7 @@ router.post('/change', async function (req, res) {
     surname: req.body.surname,
     nickname: req.body.nickname,
     email: req.body.email,
-    password: req.body.password,
+    password: sha256(req.body.password),
     phone: req.body.phone,
     location: req.body.location,
     Location_chenge: req.body.Location_chenge,

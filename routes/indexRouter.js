@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
     admin = req.session.passport.user.admin;
     auth = true;
     username = req.session.passport.user.name;
-    id = req.session.passport.user.id;
+    id = req.session.passport.user._id;
   }
 
   res.render('index', { id, username, auth, admin, alumnisArray });
