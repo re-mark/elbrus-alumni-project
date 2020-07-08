@@ -5,6 +5,7 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const sha256 = require('sha256');
+const fileUpload = require('express-fileupload');
 
 // Passport.js
 const passport = require('passport');
@@ -49,6 +50,9 @@ app.use(session({
   saveUninitialized: false,
 }));
 
+// express-fileupload
+app.use(fileUpload());
+
 // Passport.js
 app.use(passport.initialize());
 app.use(passport.session());
@@ -92,7 +96,7 @@ app.use('/registr', registrationRouter);
 // Login
 app.use('/login', loginRouter);
 // Users
-app.use('/users', usersRouter);
+app.use('/user', usersRouter);
 
 // Поднимаем сервер
 app.listen(process.env.PORT || 3000);

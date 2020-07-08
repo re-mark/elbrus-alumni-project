@@ -19,7 +19,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-              href="/register">Регистрация</a>
+              href="/registr">Регистрация</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
               href="/login">Войти</a>
@@ -68,7 +68,7 @@
               <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
             </div>
             <p style="text-align: center">{{this.name}} {{this.surname}}</p>
-            <img src="./images/{{this.img_path}}">
+            <img src="../routes/fotoAvatar/{{this.avatar}}}> {{!-- ДОДЕЛАТЬ: путь не работает --}}
             <p>Обо мне: {{this.about_user}}</p>
             <p>Город: {{this.location}}</p>
             <p>Телефон: {{this.phone}}</p>
