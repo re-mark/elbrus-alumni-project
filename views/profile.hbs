@@ -21,7 +21,7 @@
         <ul class="navbar-nav ml-auto">
           {{#if auth}}
           <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-              href="/users/{{id}}">{{username}}</a>
+              href="/user/{{id}}">{{username}}</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
               href="/login/exit">Выйти</a>
@@ -75,10 +75,12 @@
                             </ul>
                         </div>
                     </div>
+                    {{#if allowEdit}}
                     <div class="col-md-2">
                         <a href="change/{{_id}}">РЕДАКТИРОВАТЬ ПРОФИЛЬ</a>
                         {{!-- <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit"/> --}}
                     </div>
+                    {{/if}}
                 </div>
                 <div class="row">
                     <div class="col-md-4">
