@@ -19,10 +19,10 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-              href="/login">Войти</a>
+              href="">Регистрация</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-              href="/login/exit">Выйти</a>
+              href="">Логин</a>
           </li>
         </ul>
       </div>
@@ -32,7 +32,8 @@
     <div class="container d-flex align-items-center flex-column">
       <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5" src="/images/logoelbrus.svg" alt="">
       <!-- Masthead Heading-->
-      <h1 class="masthead-heading mb-0">Регистрация</h1>
+      <h1 class="masthead-heading mb-0">Изменить профиль</h1><br>
+      <h5>{{name}} {{surname}}</h5>
       <!-- Icon Divider-->
       <div class="divider-custom divider-light">
         <div class="divider-custom-line"></div>
@@ -40,7 +41,7 @@
         <div class="divider-custom-line"></div>
       </div>
       <!-- Masthead Subheading-->
-      <form action="/users/newUser" method="post">
+      <form action="/user/change" method="post">
         <div class="form-row">
           <div class="col-md-4 mb-3">
             <label for="validationServer01">Имя</label>
@@ -70,6 +71,7 @@
             </div>
           </div>
         </div>
+        <input type="hidden" name="_id" value="{{_id}}" class="form-control is-invalid"><br> {{!-- скрытое поле для id --}}
         <div class="form-row">
           <div class="col-md-6 mb-3">
             <label for="inputPassword6">Пароль</label>
@@ -121,7 +123,7 @@
         <div class="form-row">
           <div class="col-md-6 mb-3">
             <label for="validationServer03">Ссылка на ГитХаб</label>
-            <input type="url" name="gitHub_link" value="{{gitHub_link}}" class="form-control is-invalid" id="validationServer03" placeholder="github.com" {{!-- required --}}>
+            <input type="url" name="gitHub_link" value="{{gitHub_link}}" class="form-control is-invalid" id="validationServer03" placeholder="github.com" required>
             <div class="invalid-feedback">
               Пожалуйста введите ссылку на Гит!
             </div>
@@ -130,7 +132,7 @@
         <div class="form-row">
           <div class="col-md-6 mb-3">
             <label for="validationServer03">Ссылка на ЛинкедИН</label>
-            <input type="url" name="linkedin_link" value="{{linkedin_link}}" class="form-control is-invalid" id="validationServer03" placeholder="linkedin.com" {{!-- required --}}>
+            <input type="url" name="linkedin_link" value="{{linkedin_link}}" class="form-control is-invalid" id="validationServer03" placeholder="linkedin.com" required>
             <div class="invalid-feedback">
               Пожалуйста введите ссылку на ЛинкедИН!
             </div>
@@ -178,7 +180,7 @@
     </div>
     </div>
     </div>
-    <button class="btn btn-primary" type="submit">Зарегистрироваться</button>
+    <button class="btn btn-primary" type="submit">Изменить профиль</button>
     </form>
     </div>
   </header>
