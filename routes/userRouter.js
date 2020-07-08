@@ -9,8 +9,6 @@ const router = express.Router();
 
 // ручка регистрации
 router.post('/newUser', async (req, res) => {
-
-
   const fileFoto = req.files.fileFoto;
   const fileName = fileFoto.name;
   const photoAvatar = (fileName + req.body.surname + '.jpg');
@@ -23,7 +21,6 @@ router.post('/newUser', async (req, res) => {
     console.log("uploaded");
   }
 })
-
     const {name, surname, nickname} = req.body;
 
     const newUser = new User({ 
