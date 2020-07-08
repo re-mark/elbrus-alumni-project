@@ -6,11 +6,14 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/', async (req, res) => {
-  const alumniCards = await User.find();
-  console.log(alumniCards);
-  
+  const alumnisArray = await User.find({ admin: false });
 
-  res.render('index');
+  let admin;
+  if (req.isAuthenticated()) {
+    admin = req.session.passport.user.admin;
+  }
+
+  res.render('index', { admin, alumnisArray });
 });
 
 module.exports = router;

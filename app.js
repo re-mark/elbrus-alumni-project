@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const session = require('express-session');
-const sha256  = require('sha256');
+const sha256 = require('sha256');
 
 // Passport.js
 const passport = require('passport');
@@ -27,7 +27,7 @@ mongoose.connect(process.env.DB_CONNECTION, {
 });
 
 // Routes
-const indexRouter = require('./routes/index');
+const indexRouter = require('./routes/indexRouter');
 const usersRouter = require('./routes/userRouter');
 const loginRouter = require('./routes/loginRouter');
 const registrationRouter = require('./routes/registration');
@@ -71,27 +71,52 @@ passport.use(new LocalStrategy(
   },
 ));
 
-// app.use((req, res, next) => {
-//   console.log(req.session);
-//   next();
-// });
+/* app.use((req, res, next) => {
+  console.log(req.session);
+  next();
+}); */
+
+function authMiddleware() {
+  return function(req, res, next) {
+    if (req.isAuthenticated()) {
+      return next();
+    }
+    res.redirect('/login');
+  };
+}
+
+// перенести в ручку админа, вызвыать между
+function adminMiddleware() {
+  return function(req, res, next) {
+    if (req.isAuthenticated()) {
+      if (req.session.passport.user.admin) {
+        console.log('Admin!');
+        return next();
+      }
+    }
+    res.redirect('/login');
+  };
+}
 
 // Подключаем ручки
 // main
 app.use('/', indexRouter);
 // Reg
-app.use('/register', usersRouter);
+app.use('/register', registrationRouter);
 // Login
 app.use('/login', loginRouter);
+// Users
 app.use('/users', usersRouter);
-app.use('/registration', registrationRouter);
 // Profile
 app.use('/profile', profileRouter);
-
-
-
-
-
+// Admin Page
+app.get('/admin', (req, res) => {
+  if (req.isAuthenticated()) {
+    if (req.session.passport.user.admin) {
+      res.send('Congratulations - youre admin!');
+    }
+  } else res.redirect('/login');
+});
 
 // Поднимаем сервер
 app.listen(process.env.PORT || 3000);

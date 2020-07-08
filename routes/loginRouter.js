@@ -13,6 +13,11 @@ router.post('/',
     failureRedirect: '/login',
   }));
 
+router.get('/exit', (req, res) => {
+  req.logout();
+  res.redirect('/');
+});
+
 passport.serializeUser((user, done) => {
   done(null, user);
 });
