@@ -117,8 +117,6 @@ router.post('/change', async function (req, res) {
   res.redirect('/') // изменить на страницу профиля
 });
 
-
-
 // поиск по локации
 router.get('/find/:location', async function (req, res) {
   const result = await User.find({ "location": req.params.location});
