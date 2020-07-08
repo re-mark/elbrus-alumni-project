@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/stylesheets/profile.css">
+</head>
+
+<body id="page-top">
+  <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+    <div class="container"><a class="navbar-brand js-scroll-trigger" href="/"><img id="brandImage"
+          src="/images/logoelbrus.svg" alt=""></a>
+      <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button"
+        data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+              href="/login">Войти</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+              href="/login/exit">Выйти</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+      <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5" src="/images/logoelbrus.svg" alt="">
+      <!-- Masthead Heading-->
+      <h1 class="masthead-heading mb-0">Профиль</h1>
+      <!-- Icon Divider-->
+      <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-angle-down"></i></div>
+        <div class="divider-custom-line"></div>
+      </div>
+      <!-- Masthead Subheading-->
+      <div class="container emp-profile">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" alt=""/>
+                            <div class="file btn btn-lg btn-primary">
+                                Изменить фото
+                                <input type="file" name="file"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Информация о профиле</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Опыт</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-work">
+                            <p>Соцсети</p>
+                            <a href=""><i class="fab fa-fw fa-linkedin-in"></i></a><br/>
+                            <a href=""><i class="fab fa-instagram"></i></a><br/>
+                            <a href=""><i class="fab fa-fw fa-github"></i></a><br/>
+                            <a href=""><i class="fab fa-fw fa-facebook-f"></i></a><br/>
+                            <a href=""><i class="fab fa-vk"></i></a><br/>
+                            <p>Скиллы</p>
+                            <a href="">Web Designer</a><br/>
+                            <a href="">Web Developer</a><br/>
+                            <a href="">WordPress</a><br/>
+                            <a href="">WooCommerce</a><br/>
+                            <a href="">PHP, .Net</a><br/>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Имя пользователя</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Raydman</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Имя</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Дима</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Фамилия</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Бочок</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>vasyapupkin@elbrus.com</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Телефон</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>123 456 7890</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Местонахождение</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Иркутск</p>
+                                            </div>
+                                        </div>
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>О себе</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Я разработчик................</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Опыт участия в проектах</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Огромный опыт</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Готов работать</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Да</p>
+                                            </div>
+                                        </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>           
+        </div>
+  </header>
+  <footer class="footer text-center">
+    <div class="container">
+      <div class="row">
+        <!-- Footer Location-->
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <h4 class="mb-4">Мы находимся:</h4>
+          <p class="pre-wrap lead mb-0">Москва, м. Ленинский проспект, ул. Вавилова 1 </p>
+        </div>
+        <!-- Footer Social Icons-->
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <h4 class="mb-4">В социальных сетях:</h4><a class="btn btn-outline-light btn-social mx-1"
+            href="https://www.facebook.com/elbrusbootcamp"><i class="fab fa-fw fa-facebook-f"></i></a><a
+            class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/elbrus.bootcamp/"><i
+              class="fab fa-instagram"></i></a><a class="btn btn-outline-light btn-social mx-1" href=""><i
+              class="fab fa-fw fa-linkedin-in"></i></a><a class="btn btn-outline-light btn-social mx-1"
+            href="https://vk.com/elbrusbootcamp"><i class="fab fa-vk"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Copyright Section-->
+  <section class="copyright py-4 text-center text-white">
+    <div class="container"><small class="pre-wrap">Copyright © elbrusboot.camp 2020 </small></div>
+  </section>
+  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+  <div class="scroll-to-top d-lg-none position-fixed"><a
+      class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i
+        class="fa fa-chevron-up"></i></a></div>
+</body>
+
+</html>

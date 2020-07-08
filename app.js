@@ -31,6 +31,7 @@ const indexRouter = require('./routes/indexRouter');
 const usersRouter = require('./routes/userRouter');
 const loginRouter = require('./routes/loginRouter');
 const registrationRouter = require('./routes/registration');
+const profileRouter = require('./routes/profileRouter');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -106,6 +107,8 @@ app.use('/register', registrationRouter);
 app.use('/login', loginRouter);
 // Users
 app.use('/users', usersRouter);
+// Profile
+app.use('/profile', profileRouter);
 // Admin Page
 app.get('/admin', (req, res) => {
   if (req.isAuthenticated()) {
