@@ -74,6 +74,7 @@ router.post('/newUser', async (req, res) => {
     })
   })
   
+  
 // получаем данные для редактирования записи
   router.get('/change/:id', async function (req, res) {
   const result = await User.findOne({ "_id": req.params.id });
