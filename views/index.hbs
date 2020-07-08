@@ -20,7 +20,7 @@
         <ul class="navbar-nav ml-auto">
           {{#if auth}}
           <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-              href="/users/{{id}}">{{username}}</a>
+              href="/user/{{id}}">{{username}}</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
               href="/login/exit">Выйти</a>
@@ -81,8 +81,8 @@
             <p>Город: {{this.location}}</p>
             <p>Телефон: {{this.phone}}</p>
             <p>Мои навыки: {{this.skills}}</p>
-            <button><a href="/users/{{this.id}}">Открыть профиль</a></button>
-            <button><a href="/users/change/{{this.id}}">Редактировать профиль</a></button>
+            <button><a href="/user/{{this.id}}">Открыть профиль</a></button>
+            <button><a href="/user/change/{{this.id}}">Редактировать профиль</a></button>
         </div>
     </div>
         {{/each}}
@@ -100,7 +100,7 @@
             <p>Город: {{this.location}}</p>
             <p>Телефон: {{this.phone}}</p>
             <p>Мои навыки: {{this.skills}}</p>
-            <button><a href="/users/{{this.id}}">Открыть профиль</a></button>
+            <button><a href="/user/{{this.id}}">Открыть профиль</a></button>
         </div>
     </div>
         {{/each}}
