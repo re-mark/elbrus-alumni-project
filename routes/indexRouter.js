@@ -6,9 +6,7 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/', async (req, res) => {
-  const alumnisArray = await User.find({ admin: false });
-console.log(alumnisArray);
-
+  const alumnisArray = await User.find();
   let admin;
   let username;
   let id;
