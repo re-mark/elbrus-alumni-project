@@ -13,10 +13,10 @@ router.post('/newUser', async (req, res) => {
 
   const fileFoto = req.files.fileFoto;
   const fileName = fileFoto.name;
-  const photoAvatar = (fileName + req.body.surname + '.jpg');
+  const photoAvatar = (fileName + req.body.nickname + '.jpg');
   console.log(photoAvatar);
 
-  fileFoto.mv(__dirname + '/fotoAvatar/' + fileName + req.body.surname + '.jpg' , function(err) {
+  fileFoto.mv(__dirname + '/fotoAvatar/' + fileName + req.body.nickname + '.jpg' , function(err) {
   if(err){
     console.log(err);
   }else{
@@ -53,7 +53,6 @@ router.post('/newUser', async (req, res) => {
   
   // ручка профиля
   router.get('/:id', async (req, res) => {
-    console.log(req.params.id);
     const result = await User.findOne({_id: req.params.id});
     res.render('profile', { // ---- рендерить на страницу профиля
         _id: result._id,
@@ -70,6 +69,8 @@ router.post('/newUser', async (req, res) => {
         about_user: result.about_user,
         projects: result.projects,
         skills: result.skills,
+        avatar: result.avatar
+        
     })
   })
   
