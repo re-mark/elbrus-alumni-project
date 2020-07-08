@@ -106,6 +106,14 @@ app.use('/register', registrationRouter);
 app.use('/login', loginRouter);
 // Users
 app.use('/users', usersRouter);
+// Admin Page
+app.get('/admin', (req, res) => {
+  if (req.isAuthenticated()) {
+    if (req.session.passport.user.admin) {
+      res.send('Congratulations - youre admin!');
+    }
+  } else res.redirect('/login');
+});
 
 // Поднимаем сервер
 app.listen(process.env.PORT || 3000);

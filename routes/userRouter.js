@@ -1,4 +1,5 @@
 const express = require('express');
+const sha256 = require('sha256');
 const User = require('../models/user');
 const { registerDecorator } = require('handlebars');
 const { db } = require('../models/user');
@@ -12,7 +13,7 @@ router.post('/newUser', async (req, res) => {
         surname: req.body.surname,
         nickname: req.body.nickname,
         email: req.body.email,
-        password: req.body.password,
+        password: sha256(req.body.password),
         phone: req.body.phone,
         location: req.body.location,
         Location_chenge: req.body.Location_chenge,

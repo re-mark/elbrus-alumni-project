@@ -59,14 +59,15 @@
         <div class="divider-custom-line"></div>
       </div>
       <!-- Portfolio Grid Items-->
-      <div class="row justify-content-center">
+  <div class="row justify-content-center">
         <!-- Portfolio Items-->
-      {{#each alumnisArray}}
-        <div class="col-md-6 col-lg-4 mb-5">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal0">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+       {{#if admin}}
+       {{#each alumnisArray}}
+    <div class="col-md-6 col-lg-4 mb-5">
+        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal0">
+          <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
               <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-            </div>
+          </div>
             <p style="text-align: center">{{this.name}} {{this.surname}}</p>
             <img src="./images/{{this.img_path}}">
             <p>Обо мне: {{this.about_user}}</p>
@@ -74,14 +75,29 @@
             <p>Телефон: {{this.phone}}</p>
             <p>Мои навыки: {{this.skills}}</p>
             <button formaction="/users/{{this.id}}">Открыть профиль</button>
-            {{#if this.admin}}
             <button formaction="/users/">Редактировать профиль</button>
-            {{/if}}
-          </div>
         </div>
-      {{/each}}
-      </div>
     </div>
+        {{/each}}
+        {{else}}
+        {{#each alumnisArray}}
+    <div class="col-md-6 col-lg-4 mb-5">
+        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal0">
+          <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+          </div>
+            <p style="text-align: center">{{this.name}} {{this.surname}}</p>
+            <img src="./images/{{this.img_path}}">
+            <p>Обо мне: {{this.about_user}}</p>
+            <p>Город: {{this.location}}</p>
+            <p>Телефон: {{this.phone}}</p>
+            <p>Мои навыки: {{this.skills}}</p>
+            <button formaction="/users/{{this.id}}">Открыть профиль</button>
+        </div>
+    </div>
+        {{/each}}
+        {{/if}}
+  </div>
   </section>
   <!-- Portfolio Modal-->
   <div class="portfolio-modal modal fade" id="portfolioModal0" tabindex="-1" role="dialog"

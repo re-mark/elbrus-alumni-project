@@ -8,7 +8,12 @@ const router = express.Router();
 router.get('/', async (req, res) => {
   const alumnisArray = await User.find({ admin: false });
 
-  res.render('index', { alumnisArray });
+  let admin;
+  if (req.isAuthenticated()) {
+    admin = req.session.passport.user.admin;
+  }
+
+  res.render('index', { admin, alumnisArray });
 });
 
 module.exports = router;
