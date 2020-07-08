@@ -6,7 +6,8 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/', async (req, res) => {
-  const alumnisArray = await User.find({ admin: false });
+  const alumnisArray = await User.find();
+console.log(alumnisArray);
 
   let admin;
   let username;
@@ -16,7 +17,7 @@ router.get('/', async (req, res) => {
     admin = req.session.passport.user.admin;
     auth = true;
     username = req.session.passport.user.name;
-    id = req.session.passport.user.id;
+    id = req.session.passport.user._id;
   }
 
   res.render('index', { id, username, auth, admin, alumnisArray });

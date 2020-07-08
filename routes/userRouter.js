@@ -21,11 +21,12 @@ router.post('/newUser', async (req, res) => {
     console.log("uploaded");
   }
 })
+    const {name, surname, nickname} = req.body;
 
     const newUser = new User({ 
-        name: req.body.name,
-        surname: req.body.surname,
-        nickname: req.body.nickname,
+        name,
+        surname,
+        nickname,
         email: req.body.email,
         password: sha256(req.body.password),
         phone: req.body.phone,
@@ -50,8 +51,19 @@ router.post('/newUser', async (req, res) => {
   // ручка профиля
   router.get('/:id', async (req, res) => {
     console.log(req.params.id);
+
+    let username;
+    let auth = false;
+    if (req.isAuthenticated()) {
+      auth = true;
+      username = req.session.passport.user.name;
+    }
+
     const result = await User.findOne({_id: req.params.id});
-    res.render('userProfile', { // ---- рендерить на страницу профиля
+    res.render('profile', { // ---- рендерить на страницу профиля
+        auth,
+        username,
+        _id: result._id,
         name: result.name,
         surname: result.surname,
         nickname: result.nickname,
@@ -71,12 +83,23 @@ router.post('/newUser', async (req, res) => {
 // получаем данные для редактирования записи
   router.get('/change/:id', async function (req, res) {
   const result = await User.findOne({ "_id": req.params.id });
+
+  let username;
+  let auth = false;
+  if (req.isAuthenticated()) {
+    auth = true;
+    username = req.session.passport.user.name;
+  }
+
   res.render('changeUserProfile', {  // --- рендерить на форму редактирования
+    auth,
+    username,
     _id: result._id,
     name: result.name,
     surname: result.surname,
     nickname: result.nickname,
     email: result.email,
+    password: result.password,
     phone: result.phone,
     location: result.location,
     Location_chenge: result.Location_chenge,
@@ -95,6 +118,7 @@ router.post('/change', async function (req, res) {
     surname: req.body.surname,
     nickname: req.body.nickname,
     email: req.body.email,
+    password: req.body.password,
     phone: req.body.phone,
     location: req.body.location,
     Location_chenge: req.body.Location_chenge,
