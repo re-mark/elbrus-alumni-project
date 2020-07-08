@@ -9,11 +9,17 @@ router.get('/', async (req, res) => {
   const alumnisArray = await User.find({ admin: false });
 
   let admin;
+  let username;
+  let id;
+  let auth = false;
   if (req.isAuthenticated()) {
     admin = req.session.passport.user.admin;
+    auth = true;
+    username = req.session.passport.user.name;
+    id = req.session.passport.user.id;
   }
 
-  res.render('index', { admin, alumnisArray });
+  res.render('index', { id, username, auth, admin, alumnisArray });
 });
 
 module.exports = router;
