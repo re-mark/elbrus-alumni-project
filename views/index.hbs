@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>{{title}}</title>
+  <title>Elbrus Alumni</title>
 </head>
 
 <body id="page-top">
@@ -18,8 +18,13 @@
         aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
+          {{#if auth}}
           <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-              href="/register">Регистрация</a>
+              href="/users/{{id}}">{{username}}</a>
+          </li>
+          {{/if}}
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+              href="/registr">Регистрация</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
               href="/login">Войти</a>
@@ -69,13 +74,13 @@
               <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
           </div>
             <p style="text-align: center">{{this.name}} {{this.surname}}</p>
-            <img src="./images/{{this.img_path}}">
+            <img src="../routes/fotoAvatar/{{this.avatar}}> {{!-- ДОДЕЛАТЬ: путь не работает --}}
             <p>Обо мне: {{this.about_user}}</p>
             <p>Город: {{this.location}}</p>
             <p>Телефон: {{this.phone}}</p>
             <p>Мои навыки: {{this.skills}}</p>
             <button formaction="/users/{{this.id}}">Открыть профиль</button>
-            <button formaction="/users/">Редактировать профиль</button>
+            <button formaction="/users/change/{{this.id}}">Редактировать профиль</button>
         </div>
     </div>
         {{/each}}
@@ -100,7 +105,7 @@
   </div>
   </section>
   <!-- Portfolio Modal-->
-  <div class="portfolio-modal modal fade" id="portfolioModal0" tabindex="-1" role="dialog"
+{{!--   <div class="portfolio-modal modal fade" id="portfolioModal0" tabindex="-1" role="dialog"
     aria-labelledby="#portfolioModal0Label" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
@@ -132,7 +137,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
   
   <section class="page-section bg-primary text-white mb-0" id="about">
     <div class="container">

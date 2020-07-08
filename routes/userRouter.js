@@ -3,12 +3,26 @@ const sha256 = require('sha256');
 const User = require('../models/user');
 const { registerDecorator } = require('handlebars');
 const { db } = require('../models/user');
+const fileUpload = require('express-fileupload');
 
 const router = express.Router();
 
 // ручка регистрации
 router.post('/newUser', async (req, res) => {
-    const newUser = new User({
+  const fileFoto = req.files.fileFoto;
+  const fileName = fileFoto.name;
+  const photoAvatar = (fileName + req.body.surname + '.jpg');
+  console.log(photoAvatar);
+
+  fileFoto.mv(__dirname + '/fotoAvatar/' + fileName + req.body.surname + '.jpg' , function(err) {
+  if(err){
+    console.log(err);
+  }else{
+    console.log("uploaded");
+  }
+})
+
+    const newUser = new User({ 
         name: req.body.name,
         surname: req.body.surname,
         nickname: req.body.nickname,
@@ -24,7 +38,9 @@ router.post('/newUser', async (req, res) => {
         projects: req.body.projects,
         skills: req.body.skills,
         admin: req.body.admin,
-        admin_phrase: req.body.admin_phrase
+        admin_phrase: req.body.admin_phrase,
+        avatar: photoAvatar
+        
     });
   
     await newUser.save();
