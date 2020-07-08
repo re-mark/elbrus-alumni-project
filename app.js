@@ -31,6 +31,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/userRouter');
 const loginRouter = require('./routes/loginRouter');
 const registrationRouter = require('./routes/registration');
+const profileRouter = require('./routes/profileRouter');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -84,6 +85,8 @@ app.use('/register', usersRouter);
 app.use('/login', loginRouter);
 app.use('/users', usersRouter);
 app.use('/registration', registrationRouter);
+// Profile
+app.use('/profile', profileRouter);
 
 
 
