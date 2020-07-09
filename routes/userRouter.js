@@ -9,6 +9,13 @@ const router = express.Router();
 
 // ручка регистрации
 router.post('/newUser', async (req, res) => {
+  let username;
+  let auth = false;
+  if (req.isAuthenticated()) {
+    auth = true;
+    username = req.session.passport.user.name;
+  }
+
   const fileFoto = req.files.fileFoto;
   const fileName = fileFoto.name;
   const photoAvatar = (fileName + req.body.nickname + '.jpg');
