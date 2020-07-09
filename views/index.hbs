@@ -20,7 +20,7 @@
         <ul class="navbar-nav ml-auto">
           {{#if auth}}
           <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-              href="/users/{{id}}">{{username}}</a>
+              href="/user/{{id}}">{{username}}</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
               href="/login/exit">Выйти</a>
@@ -75,14 +75,15 @@
 {{!--           <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
               <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
           </div> --}}
+            
+            <img width="600" height="800" src="/fotoAvatar/{{this.avatar}}" class="img-fluid w-15; h-15">  
             <p style="text-align: center">{{this.name}} {{this.surname}}</p>
-            <img src="fotoAvatar/{{this.avatar}}" class="img-fluid w-15; h-15">  {{!-- ДОДЕЛАТЬ: путь не работает --}}
             <p>Обо мне: {{this.about_user}}</p>
             <p>Город: {{this.location}}</p>
             <p>Телефон: {{this.phone}}</p>
             <p>Мои навыки: {{this.skills}}</p>
-            <button><a href="/users/{{this.id}}">Открыть профиль</a></button>
-            <button><a href="/users/change/{{this.id}}">Редактировать профиль</a></button>
+            <button><a href="/user/{{this.id}}">Открыть профиль</a></button>
+            <button><a href="/user/change/{{this.id}}">Редактировать профиль</a></button>
         </div>
     </div>
         {{/each}}
@@ -94,13 +95,14 @@
           {{!-- <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
               <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
           </div> --}}
-            <p style="text-align: center">{{this.name}} {{this.surname}}</p>
-            <img src="fotoAvatar/{{this.avatar}}" class="img-fluid w-15; h-15"> {{!-- ДОДЕЛАТЬ: путь не работает --}}
-            <p>Обо мне: {{this.about_user}}</p>
+            
+            <img width="600" height="800" src="/fotoAvatar/{{this.avatar}}" class="img-fluid">
+            <p style="text-align: center">{{this.name}} {{this.surname}}</p> 
+            <p class="text-hidden">Обо мне: {{this.about_user}}</p>
             <p>Город: {{this.location}}</p>
             <p>Телефон: {{this.phone}}</p>
             <p>Мои навыки: {{this.skills}}</p>
-            <button><a href="/users/{{this.id}}">Открыть профиль</a></button>
+            <button type="button" class="btn btn-primary purplebtn"><a class="purplebtna" href="/user/{{this.id}}">Открыть профиль</a></button>
         </div>
     </div>
         {{/each}}
