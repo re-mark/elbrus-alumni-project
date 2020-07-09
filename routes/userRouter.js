@@ -152,9 +152,9 @@ router.post('/changeAvatar', async (req, res) => {
   })
 
   await User.update({ "_id": req.body._id }, {
-    avatar: photoAvatar
+    avatar: photoAvatar,
   });
-  res.redirect('/user/' + req.body._id) 
+  res.redirect('/user/' + req.body._id);
 });
 
 
@@ -200,19 +200,16 @@ router.get('/find/:name', async function (req, res) {
   })
 });
 
-router.post('/delete/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
   const userId = req.params.id;
 
-  let status;
   const user = await User.findById(userId);
 
-  await User.deleteOne(user)
+  User.update(user, { show: false })
     .then((result) => {
-      if (result.ok === 1) status = 'true';
+      if (result.ok === 1) res.send('true');
     })
-    .catch(() => status = 'false');
-
-  res.send(status);
+    .catch(() => res.send('false'));
 });
 
 module.exports = router;
