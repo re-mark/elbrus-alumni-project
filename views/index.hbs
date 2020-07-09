@@ -76,6 +76,8 @@
 {{!--           <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
               <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
           </div> --}}
+            
+            <img width="600" height="800" src="/fotoAvatar/{{this.avatar}}" class="img-fluid w-15; h-15">  
             <p style="text-align: center">{{this.name}} {{this.surname}}</p>
             <img src="avatar/{{this.avatar}}" class="masthead-avatar mb-5">  
             <p>Обо мне: {{this.about_user}}</p>
@@ -103,14 +105,12 @@
               <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
           </div> --}}
             <p style="text-align: center">{{this.name}} {{this.surname}}</p>
-            <img src="avatar/{{this.avatar}}" class="img-fluid w-15; h-15"> 
-            <p>Обо мне: {{this.about_user}}</p>
+            <img width="600" height="800" src="avatar/{{this.avatar}}" class="img-fluid"> 
+            <p class="text-hidden">Обо мне: {{this.about_user}}</p>
             <p>Город: {{this.location}}</p>
             <p>Телефон: {{this.phone}}</p>
             <p>Мои навыки: {{this.skills}}</p>
-            <form action="/user/{{this.id}}" method="GET">
-              <input id="open-btn" type="submit" value="Открыть профиль">
-            </form>
+            <button type="button" class="btn btn-primary purplebtn"><a class="purplebtna" href="/user/{{this.id}}">Открыть профиль</a></button>
         </div>
     </div>
         {{/each}}
