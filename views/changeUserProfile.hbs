@@ -51,7 +51,7 @@
         <div class="divider-custom-line"></div>
       </div>
       <!-- Masthead Subheading-->
-      <form action="/users/change" method="post">
+      <form encType="multipart/form-data" action="/user/change" method="post">
         <div class="form-row">
           <div class="col-md-4 mb-3">
             <label for="validationServer01">Имя</label>
@@ -81,8 +81,8 @@
             </div>
           </div>
         </div>
-        <input type="hidden" name="_id" value="{{_id}}" class="form-control is-invalid"><br> {{!-- скрытое поле для id --}}
-        <div class="form-row">
+        <input type="hidden" name="_id" value="{{_id}}" class="form-control is-invalid"> {{!-- скрытое поле для id --}}
+     {{!--    <div class="form-row">
           <div class="col-md-6 mb-3">
             <label for="inputPassword6">Пароль</label>
             <input type="password" name="password" value="{{password}}" id="inputPassword6" class="form-control mx-sm-3"
@@ -96,7 +96,7 @@
             <input type="password" id="inputPassword6" class="form-control mx-sm-3"
               aria-describedby="passwordHelpInline">
           </div>
-        </div>
+        </div> --}}
         <div class="form-row">
           <div class="col-md-6 mb-3">
             <label for="validationServer03">Email</label>
@@ -181,12 +181,12 @@
             </div>
           </div>
         </div>
-        <div class="form-row">
+      {{!--   <div class="form-row">
           <div class="custom-file">
-            <input type="file" class="custom-file-input" id="customFile">
+            <input type="file" name="fileFoto" class="custom-file-input" id="customFile">
             <label class="custom-file-label" for="customFile">Choose file</label>
           </div>
-        </div>
+        </div> --}}
     </div>
     </div>
     </div>

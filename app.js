@@ -32,7 +32,6 @@ const indexRouter = require('./routes/indexRouter');
 const usersRouter = require('./routes/userRouter');
 const loginRouter = require('./routes/loginRouter');
 const registrationRouter = require('./routes/registration');
-const profileRouter = require('./routes/profileRouter');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -43,8 +42,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use(express.static(path.join(__dirname, 'routes'))); // ПЛОХО: надо переделать (костыль) -- !!!!
 
 // express-session
 app.use(session({
@@ -112,11 +109,7 @@ app.use('/registr', registrationRouter);
 // Login
 app.use('/login', loginRouter);
 // Users
-
 app.use('/user', usersRouter);
-
-// Profile
-app.use('/profile', profileRouter);
 // Admin Page
 app.get('/admin', (req, res) => {
   if (req.isAuthenticated()) {

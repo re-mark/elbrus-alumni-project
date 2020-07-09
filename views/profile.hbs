@@ -56,8 +56,7 @@
           <div class="row">
             <div class="col-md-4">
               <div class="profile-img">
-                <img src="/fotoAvatar/{{this.avatar}}" alt="" />
-                
+                <img src="/avatar/{{this.avatar}}" alt=""/>
                 <div class="file btn btn-lg btn-primary">
                   Изменить фото
                   <input type="file" name="file" />
@@ -77,6 +76,12 @@
               
               <div class="profile-head">
                   <div class="row">
+                    {{#if allowEdit}}
+                    <div class="col-md-2">
+                        <a href="change/{{_id}}">РЕДАКТИРОВАТЬ ПРОФИЛЬ</a>
+                        {{!-- <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit"/> --}}
+                    </div>
+                    {{/if}}
                     <div class="col-md-6">
                       <p>{{name}}11</p>
                     </div>
@@ -105,7 +110,6 @@
                   <div class="col-md-6">
                     <label>Имею навыки работы с:</label>
                   </div>
-                  
                 </div>
                 <div class="row">
                   
@@ -275,6 +279,13 @@
       </form>
     </div>
   </header>
+   
+  <form encType="multipart/form-data" action="/user/changeAvatar" method="post">
+  <input type="hidden" name="_id" value="{{_id}}" class="form-control is-invalid">
+      <input type="file" name="fileFoto" class="custom-file-input" id="avatarFile">
+      <label class="custom-file-label" for="avatarFile">Choose file</label>
+      <button class="btn btn-primary" type="submit">Поменять фото</button>
+  </form>
   <footer class="footer text-center">
     <div class="container">
       <div class="row">
