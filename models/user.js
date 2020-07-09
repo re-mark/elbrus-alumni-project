@@ -15,9 +15,10 @@ const userSchema = new mongoose.Schema({
   about_user: String,
   projects: String,
   skills: String,
-  admin: Boolean,
+  admin: { type: Boolean, default: false },
   admin_phrase: String,
   avatar: String,
+  show: { type: Boolean, default: true },
 });
 
 module.exports = mongoose.model('User', userSchema);

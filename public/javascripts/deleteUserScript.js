@@ -5,7 +5,7 @@ delForms.forEach((el) => {
     event.preventDefault();
 
     let deleteFetch = await fetch(event.target.action, {
-      method: 'POST',
+      method: 'DELETE',
     });
     deleteFetch = await deleteFetch.text();
 
