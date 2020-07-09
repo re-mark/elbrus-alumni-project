@@ -198,6 +198,21 @@ router.get('/find/:name', async function (req, res) {
     projects: result.projects,
     skills: result.skills,
   })
-})
+});
+
+router.post('/delete/:id', async (req, res) => {
+  const userId = req.params.id;
+
+  let status;
+  const user = await User.findById(userId);
+
+  await User.deleteOne(user)
+    .then((result) => {
+      if (result.ok === 1) status = 'true';
+    })
+    .catch(() => status = 'false');
+
+  res.send(status);
+});
 
 module.exports = router;
