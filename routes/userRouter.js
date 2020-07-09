@@ -12,9 +12,8 @@ router.post('/newUser', async (req, res) => {
   const fileFoto = req.files.fileFoto;
   const fileName = fileFoto.name;
   const photoAvatar = (fileName + req.body.nickname + '.jpg');
-  // console.log(photoAvatar);
-
-  fileFoto.mv(__dirname + '/fotoAvatar/' + fileName + req.body.nickname + '.jpg', function (err) {
+  console.log(photoAvatar);
+  fileFoto.mv('./public' + '/avatar/' + fileName + req.body.nickname + '.jpg', function (err) {
     if (err) {
       console.log(err);
     } else {
@@ -105,7 +104,6 @@ router.get('/change/:id', async function (req, res) {
     surname: result.surname,
     nickname: result.nickname,
     email: result.email,
-    password: result.password,
     phone: result.phone,
     location: result.location,
     Location_chenge: result.Location_chenge,
@@ -124,7 +122,6 @@ router.post('/change', async function (req, res) {
     surname: req.body.surname,
     nickname: req.body.nickname,
     email: req.body.email,
-    password: sha256(req.body.password),
     phone: req.body.phone,
     location: req.body.location,
     Location_chenge: req.body.Location_chenge,
@@ -135,9 +132,30 @@ router.post('/change', async function (req, res) {
     projects: req.body.projects,
     skills: req.body.skills,
   });
-  res.redirect('/') // изменить на страницу профиля
+  res.redirect('/user/' + req.body._id) 
 });
 
+// ручка изменения фото 
+router.post('/changeAvatar', async (req, res) => {
+  console.log(req.body._id);
+  
+  const fileFoto = req.files.fileFoto;
+  const fileName = fileFoto.name;
+  const photoAvatar = (fileName + req.body.nickname + '.jpg');
+  console.log(photoAvatar);
+  fileFoto.mv('./public' + '/avatar/' + fileName + req.body.nickname + '.jpg', function (err) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("uploaded");
+    }
+  })
+
+  await User.update({ "_id": req.body._id }, {
+    avatar: photoAvatar
+  });
+  res.redirect('/user/' + req.body._id) 
+});
 
 
 // поиск по локации

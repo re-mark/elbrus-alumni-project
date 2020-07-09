@@ -52,17 +52,16 @@
       </div>
       <!-- Masthead Subheading-->
       <div class="container emp-profile">
-            <form method="post">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
-                            <img src="/fotoAvatar/{{this.avatar}}" alt=""/>
+                            <img src="/avatar/{{this.avatar}}" alt=""/>
                             <div class="file btn btn-lg btn-primary">
-                                Изменить фото
+                                Изменить фото                               
                                 <input type="file" name="file"/>
                             </div>
-                        </div>
-                    </div>
+                        </div>                      
+                    </div>            
                     <div class="col-md-6">
                         <div class="profile-head">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -181,10 +180,16 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </form>           
+                </div>        
         </div>
   </header>
+   
+  <form encType="multipart/form-data" action="/user/changeAvatar" method="post">
+  <input type="hidden" name="_id" value="{{_id}}" class="form-control is-invalid">
+      <input type="file" name="fileFoto" class="custom-file-input" id="avatarFile">
+      <label class="custom-file-label" for="avatarFile">Choose file</label>
+      <button class="btn btn-primary" type="submit">Поменять фото</button>
+  </form>
   <footer class="footer text-center">
     <div class="container">
       <div class="row">
