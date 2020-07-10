@@ -14,10 +14,10 @@
                     </div>
                 {{/if}}
                 {{#unless auth}}
-                     <div class="inProf">
+                     <div class="loginProf">
                         <a class="link_navProf" href="/login">Войти</a>
                     </div>
-                    <div class="outProf">
+                    <div class="regProf">
                         <a class="link_navProf" href="/registr">Регистрация</a>
                     </div>
                 {{/unless}}
@@ -27,13 +27,17 @@
             <div class="avatarProf">
                 <div class="photoAvatar">
                     <img src="/avatar/{{this.avatar}}" width="200" alt=""/>
+                     {{#if allowEdit}}
                     <button class="btnChangeAvatar"><a href="changeAvt/{{_id}}">Изменить фото</a></button>
+                    {{/if}}
                 </div>
             </div>
             <div class="rightBlockProf">
                 <div class="nameBlock">
                     <div class="nameProf">{{name}} {{surname}}</div>
+                    {{#if allowEdit}}
                     <button class="btnChangeProf"><a href="change/{{_id}}">Редактировать</a></button>
+                     {{/if}}
                 </div>
                 <div class="cityProf">{{location}}</div>
                 <div class="wrapAboutUser">

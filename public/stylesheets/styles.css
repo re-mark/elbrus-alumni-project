@@ -443,7 +443,7 @@ pre {
 
 .container {
   width: 100%;
-  padding-right: 1.5rem;
+  padding-right: 8.5rem;
   padding-left: 1.5rem;
   margin-right: auto;
   margin-left: auto;
@@ -5989,7 +5989,7 @@ button.bg-dark:focus {
     margin-bottom: 1rem !important; }
   .ml-sm-3,
 .mx-sm-3 {
-    margin-left: 1rem !important; }
+    margin-left: 0 !important; }
   .m-sm-4 {
     margin: 1.5rem !important; }
   .mt-sm-4,
@@ -7480,6 +7480,10 @@ html, body {height:100%;}
   font-size: 16px;
   font-weight: 400;
   cursor: pointer;
+}
+
+.loginProf {
+  margin-right: 20px;
 }
 
 .profName {
