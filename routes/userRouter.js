@@ -143,6 +143,28 @@ router.post('/change', async function (req, res) {
 });
 
 // ручка изменения фото 
+router.get('/changeAvt/:id', async function (req, res) {
+  const result = await User.findOne({ "_id": req.params.id });
+  let username;
+  let auth = false;
+  if (req.isAuthenticated()) {
+    auth = true;
+    username = req.session.passport.user.name;
+  }
+
+  res.render('changeAvatar', {  // --- рендерить на форму редактирования
+    username,
+    auth,
+    _id: result._id,
+    name: result.name,
+    surname: result.surname,
+    location: result.location,
+    avatar: result.avatar
+  })
+})
+
+
+
 router.post('/changeAvatar', async (req, res) => {
   console.log(req.body._id);
   

@@ -2,12 +2,12 @@
     <div class="containerProf"> 
         <div class="headerProf">
             <div class="logoProf">
-                <a href="/"><img src="/images/logoelbrus.svg" alt=""></a>
+                <a href="/"><img src="/images/logoelbrus.svg" max-width="200" alt=""></a>
             </div>
             <div class="navProf">
                  {{#if auth}}
                     <div class="inProf">
-                        <a class="link_navProf" href="/user/{{_id}}">{{username}}</a>
+                        <a class="link_navProf" href="/user/{{id}}">{{username}}</a>
                     </div>
                     <div class="outProf">
                         <a class="link_navProf" href="/login/exit">Выйти</a>
@@ -23,39 +23,28 @@
                 {{/unless}}
             </div>
         </div>
-        <div class="wrapProfMain">
+        <div class="wrapProfMain" style="height: 100%">
             <div class="avatarProf">
                 <div class="photoAvatar">
                     <img src="/avatar/{{this.avatar}}" width="200" alt=""/>
-                    <button class="btnChangeAvatar"><a href="changeAvt/{{_id}}">Изменить фото</a></button>
                 </div>
             </div>
             <div class="rightBlockProf">
                 <div class="nameBlock">
                     <div class="nameProf">{{name}} {{surname}}</div>
-                    <button class="btnChangeProf"><a href="change/{{_id}}">Редактировать</a></button>
                 </div>
                 <div class="cityProf">{{location}}</div>
-                <div class="wrapAboutUser">
-                    <div class="lable_aboutUser">Обо мне:</div>
-                    <div class="about_userProf">{{about_user}}</div>
-                </div>
-                <div class="wrapSkills">
-                    <div class="lable_skills">Навыки работы с:</div>
-                    <div class="skillsProf">{{skills}}</div>
-                </div>
-                <div class="wrapProject">
-                    <div class="lable_project">Проекты:</div>
-                <div class="projectProf">{{projects}}</div>
-                </div>
-                <div class="emailProf"><strong>E-mail:</strong> {{email}}</div>
-                <div class="phoneProf"><strong>Phone:</strong> {{phone}}</div>
+                <form class="formChangeAvatar" encType="multipart/form-data" action="/user/changeAvatar" method="post">
+                    <input type="hidden" name="_id" value="{{_id}}">
+                    <input class ="inputAavatarFile" type="file" name="fileFoto">
+                    <button class="btnChangeAvatar" type="submit">Поменять фото</button>
+                </form>
             </div>
         </div>
+ 
         <div class="footerProf">
          <div class="adres">Москва, м.Ленинский проспект, ул.Вавилова</div>
     </div>
     </div>
     
 </div>
- 
