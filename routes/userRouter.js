@@ -61,7 +61,7 @@ router.get('/:id', async (req, res) => {
     username = req.session.passport.user.name;
   }
 
-  res.render('profile', { // ---- рендерить на страницу профиля
+  res.render(/* 'profile' */ 'prof', { // ---- рендерить на страницу профиля
     username,
     auth,
     allowEdit,

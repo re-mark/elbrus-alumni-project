@@ -7414,3 +7414,143 @@ form .row:first-child .floating-label-form-group {
 
 .btn-social {
   margin-bottom: 0.5rem; }
+
+
+/* ========================= стили  страницы профиля =================================== */
+
+
+
+html, body {height:100%;}
+
+.wrapperProf {
+ font-family: RF Rostin, Arial, sans-serif;
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+  
+}
+
+.containerProf {
+  width: 100%;
+}
+
+.headerProf {
+  background-color: #4520ab;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 80px;
+  
+}
+
+.logoProf {
+  width: 80px;
+  height: 80px;
+  margin-left: 25%;
+}
+
+.navProf {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 130px;
+  margin-right: 25%;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.profName {
+  font-size: 30px;
+}  
+
+.link_navProf {
+  color: #3a8eed;
+}
+
+.link_navProf:visited {
+  color: #3a8eed;
+}
+
+.link_navProf:hover {
+  color: #29edff;
+  text-decoration: none;
+}
+
+.wrapProfMain {
+  display: flex;
+  flex-direction: row;
+  margin-top: 80px;
+  color: #4520ab;
+  height: 80%;
+  margin-left: 25%;
+  margin-right: 25%;
+  text-align: justify;
+
+}
+
+.avatarProf {
+ margin-right: 90px;
+
+}
+
+.nameBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btnChangeProf, .btnChangeAvatar {
+  height: 20%;
+  border: 1px solid #4520ab;
+  background-color: #ffbc5b;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+.btnChangeProf a, .btnChangeAvatar a {
+  text-decoration: none;
+  color: #4520ab;
+}
+
+.btnChangeProf a:hover, .btnChangeAvatar:hover {
+  text-decoration: none;
+}
+
+.btnChangeAvatar {
+  margin-top:7%;
+  margin-left: 12%;
+}
+
+
+.nameProf {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.wrapAboutUser {
+  margin-top: 40px;
+}
+
+.wrapSkills, .wrapProject, .emailProf, .phoneProf  {
+  margin-top: 20px;
+}
+
+.lable_aboutUser, .lable_skills, .lable_project {
+  font-weight: bold;
+}
+
+.footerProf {
+  height: 144px;
+  background-color: #4520ab;
+  display: flex;
+  justify-content: center;
+  color: #ffbc5b;
+  align-items: center;
+}
+

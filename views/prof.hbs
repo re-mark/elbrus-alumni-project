@@ -1,0 +1,61 @@
+<div class="wrapperProf">
+    <div class="containerProf"> 
+        <div class="headerProf">
+            <div class="logoProf">
+                <a href="/"><img src="/images/logoelbrus.svg" alt=""></a>
+            </div>
+            <div class="navProf">
+                 {{#if auth}}
+                    <div class="inProf">
+                        <a class="link_navProf" href="/user/{{id}}">{{username}}</a>
+                    </div>
+                    <div class="outProf">
+                        <a class="link_navProf" href="/login/exit">Выйти</a>
+                    </div>
+                {{/if}}
+                {{#unless auth}}
+                     <div class="inProf">
+                        <a class="link_navProf" href="/login">Войти</a>
+                    </div>
+                    <div class="outProf">
+                        <a class="link_navProf" href="/registr">Регистрация</a>
+                    </div>
+                {{/unless}}
+            </div>
+        </div>
+        <div class="wrapProfMain">
+            <div class="avatarProf">
+                <div class="photoAvatar">
+                    <img src="/avatar/{{this.avatar}}" width="200" alt=""/>
+                    <button class="btnChangeAvatar"><a href="#">Изменить фото</a></button>
+                </div>
+            </div>
+            <div class="rightBlockProf">
+                <div class="nameBlock">
+                    <div class="nameProf">{{name}} {{surname}}</div>
+                    <button class="btnChangeProf"><a href="change/{{_id}}">Редактировать</a></button>
+                </div>
+                <div class="cityProf">{{location}}</div>
+                <div class="wrapAboutUser">
+                    <div class="lable_aboutUser">Обо мне:</div>
+                    <div class="about_userProf">{{about_user}}</div>
+                </div>
+                <div class="wrapSkills">
+                    <div class="lable_skills">Навыки работы с:</div>
+                    <div class="skillsProf">{{skills}}</div>
+                </div>
+                <div class="wrapProject">
+                    <div class="lable_project">Проекты:</div>
+                <div class="projectProf">{{projects}}</div>
+                </div>
+                <div class="emailProf"><strong>E-mail:</strong> {{email}}</div>
+                <div class="phoneProf"><strong>Phone:</strong> {{phone}}</div>
+            </div>
+        </div>
+        <div class="footerProf">
+         <div class="adres">Москва, м.Ленинский проспект, ул.Вавилова</div>
+    </div>
+    </div>
+    
+</div>
+ 
