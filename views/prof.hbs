@@ -7,17 +7,17 @@
             <div class="navProf">
                  {{#if auth}}
                     <div class="inProf">
-                        <a class="link_navProf" href="/user/{{id}}">{{username}}</a>
+                        <a class="link_navProf" href="/user/{{_id}}">{{username}}</a>
                     </div>
                     <div class="outProf">
                         <a class="link_navProf" href="/login/exit">Выйти</a>
                     </div>
                 {{/if}}
                 {{#unless auth}}
-                     <div class="inProf">
+                     <div class="loginProf">
                         <a class="link_navProf" href="/login">Войти</a>
                     </div>
-                    <div class="outProf">
+                    <div class="regProf">
                         <a class="link_navProf" href="/registr">Регистрация</a>
                     </div>
                 {{/unless}}
@@ -27,13 +27,19 @@
             <div class="avatarProf">
                 <div class="photoAvatar">
                     <img src="/avatar/{{this.avatar}}" width="200" alt=""/>
-                    <button class="btnChangeAvatar"><a href="#">Изменить фото</a></button>
+                     {{#if allowEdit}}
+                    <button class="btnChangeAvatar"><a href="changeAvt/{{_id}}">Изменить фото</a></button>
+                    {{/if}}
                 </div>
+                 <a href="{{gitHub_link}}"><img src="/images/GitHub-Logo.png " style="width: 60%; margin-top:15%; margin-left:15% " > </a>
+                 <a href="{{linkedin_link}}"><img src="/images/linkedin-logo.png " style="width: 50%; margin-top:10%; margin-left:20% " > </a>
             </div>
             <div class="rightBlockProf">
                 <div class="nameBlock">
                     <div class="nameProf">{{name}} {{surname}}</div>
+                    {{#if allowEdit}}
                     <button class="btnChangeProf"><a href="change/{{_id}}">Редактировать</a></button>
+                     {{/if}}
                 </div>
                 <div class="cityProf">{{location}}</div>
                 <div class="wrapAboutUser">

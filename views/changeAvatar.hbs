@@ -1,0 +1,50 @@
+<div class="wrapperProf">
+    <div class="containerProf"> 
+        <div class="headerProf">
+            <div class="logoProf">
+                <a href="/"><img src="/images/logoelbrus.svg" max-width="200" alt=""></a>
+            </div>
+            <div class="navProf">
+                 {{#if auth}}
+                    <div class="inProf">
+                        <a class="link_navProf" href="/user/{{id}}">{{username}}</a>
+                    </div>
+                    <div class="outProf">
+                        <a class="link_navProf" href="/login/exit">Выйти</a>
+                    </div>
+                {{/if}}
+                {{#unless auth}}
+                     <div class="inProf">
+                        <a class="link_navProf" href="/login">Войти</a>
+                    </div>
+                    <div class="outProf">
+                        <a class="link_navProf" href="/registr">Регистрация</a>
+                    </div>
+                {{/unless}}
+            </div>
+        </div>
+        <div class="wrapProfMain" style="height: 100%">
+            <div class="avatarProf">
+                <div class="photoAvatar">
+                    <img src="/avatar/{{this.avatar}}" width="200" alt=""/>
+                </div>
+            </div>
+            <div class="rightBlockProf">
+                <div class="nameBlock">
+                    <div class="nameProf">{{name}} {{surname}}</div>
+                </div>
+                <div class="cityProf">{{location}}</div>
+                <form class="formChangeAvatar" encType="multipart/form-data" action="/user/changeAvatar" method="post">
+                    <input type="hidden" name="_id" value="{{_id}}">
+                    <input class ="inputAavatarFile" type="file" name="fileFoto">
+                    <button class="btnChangeAvatar" type="submit">Поменять фото</button>
+                </form>
+            </div>
+        </div>
+ 
+        <div class="footerProf">
+         <div class="adres">Москва, м.Ленинский проспект, ул.Вавилова</div>
+    </div>
+    </div>
+    
+</div>
