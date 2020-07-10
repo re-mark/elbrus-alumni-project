@@ -297,9 +297,30 @@ template {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
-  font-family: "SB Heading", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-weight: 700;
-  line-height: 1.2; }
+    font-family: "Lucida Console", Monaco, monospace;
+    letter-spacing: unset;
+    line-height: 35px;
+    word-spacing: 2px;
+    color: #ffbc5b;
+    font-weight: 400;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+}
+
+.Eltext {
+  font-family: "Lucida Console", Monaco, monospace;
+  letter-spacing: unset;
+  line-height: 35px;
+  word-spacing: 2px;
+  color: #29edff;
+  font-weight: 400;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: uppercase;
+}
 
 h1, .h1 {
   font-size: 2.5rem; }
@@ -1784,17 +1805,15 @@ fieldset:disabled a.btn {
   pointer-events: none; }
 
 .btn-primary {
-  color: #212529;
-  background-color: #c2cad6;
-  border-color: #c2cad6; }
+  color: #29edff;
+  background-color: #4520ab;
+  border-color: #4520ab; }
   .btn-primary:hover {
-    color: #212529;
-    background-color: #abb6c7;
+    color: #3a8eed;
     border-color: #a4b0c2; }
   .btn-primary:focus, .btn-primary.focus {
-    color: #212529;
-    background-color: #abb6c7;
-    border-color: #a4b0c2;
+    color: #3a8eed;
+    border-color: #a4b0c2; 
     box-shadow: 0 0 0 0.2rem rgba(170, 177, 188, 0.5); }
   .btn-primary.disabled, .btn-primary:disabled {
     color: #212529;
@@ -3319,12 +3338,18 @@ input[type="button"].btn-block {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 0;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+  height: 600px;
+  margin: 0 20px 0 20px;
+
+  min-width: 350px;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 0.125rem solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.5rem; }
+  border: 1px solid #ebecec;
+  border-radius: 2px; }
   .card > hr {
     margin-right: 0;
     margin-left: 0; }
@@ -3341,6 +3366,7 @@ input[type="button"].btn-block {
   padding: 1.25rem; }
 
 .card-title {
+  color: #4520ab;
   margin-bottom: 0.75rem; }
 
 .card-subtitle {
@@ -3394,13 +3420,12 @@ input[type="button"].btn-block {
 .card-img,
 .card-img-top,
 .card-img-bottom {
-  flex-shrink: 0;
-  width: 100%; }
-
-.card-img,
-.card-img-top {
-  border-top-left-radius: 0.375rem;
-  border-top-right-radius: 0.375rem; }
+  margin-top: 5px;
+  max-width: 70%;
+  min-width: 70%;
+  min-height: 50%;
+  max-height: 50%;
+  flex-shrink: 0; }
 
 .card-img,
 .card-img-bottom {
@@ -6964,7 +6989,7 @@ button.bg-dark:focus {
 .text-truncate {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap; }
+  white-space: wrap; }
 
 .text-left {
   text-align: left !important; }
@@ -7289,8 +7314,7 @@ h3 {
       font-size: 1.5em; } }
 
 .masthead {
-  padding-top: calc(6rem + 74px);
-  padding-bottom: 6rem; }
+  padding-top: calc(6rem + 74px); }
   .masthead .masthead-heading {
     font-size: 2.75rem;
     line-height: 2.75rem;
@@ -7394,7 +7418,11 @@ form .row:first-child .floating-label-form-group {
   padding-top: 5rem;
   padding-bottom: 5rem;
   background-color: #4520ab;
+<<<<<<< HEAD
   color: #ffbc5b; }
+=======
+  color: #fff; }
+>>>>>>> SergeyV
 
 .copyright {
   background-color: #4e0094; }
@@ -7516,7 +7544,8 @@ html, body {height:100%;}
 }
 
 .avatarProf {
- margin-right: 90px;
+ /* margin-right: 90px; */
+ max-width:33%;
 
 }
 
