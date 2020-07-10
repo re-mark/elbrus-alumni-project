@@ -10,17 +10,18 @@
                         <a class="link_navProf" href="/user/{{_id}}">{{username}}</a>
                     </div>
                     <div class="outProf">
-                        <a class="link_navProf" href="/login/exit">Выйти</a>
+                        <a style="color: #29edff", class="Eltext link_navProf" href="/login/exit">Выйти</a>
                     </div>
                 {{/if}}
                 {{#unless auth}}
-                     <div class="loginProf">
-                        <a class="link_navProf" href="/login">Войти</a>
+                     <div class="inProf">
+                        <a style="color: #29edff", class="Eltext link_navProf" href="/login">Войти</a>
                     </div>
-                    <div class="regProf">
-                        <a class="link_navProf" href="/registr">Регистрация</a>
+                    <div class="outProf">
+                        <a style="color: #29edff", class="Eltext link_navProf" href="/registr">Регистрация</a>
                     </div>
                 {{/unless}}
+                
             </div>
         </div>
         <div class="wrapProfMain">
