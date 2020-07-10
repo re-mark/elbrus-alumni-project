@@ -9,6 +9,13 @@ const router = express.Router();
 
 // ручка регистрации
 router.post('/newUser', async (req, res) => {
+  let username;
+  let auth = false;
+  if (req.isAuthenticated()) {
+    auth = true;
+    username = req.session.passport.user.name;
+  }
+
   const fileFoto = req.files.fileFoto;
   const fileName = fileFoto.name;
   const photoAvatar = (fileName + req.body.nickname + '.jpg');
@@ -152,9 +159,9 @@ router.post('/changeAvatar', async (req, res) => {
   })
 
   await User.update({ "_id": req.body._id }, {
-    avatar: photoAvatar
+    avatar: photoAvatar,
   });
-  res.redirect('/user/' + req.body._id) 
+  res.redirect('/user/' + req.body._id);
 });
 
 
@@ -198,6 +205,18 @@ router.get('/find/:name', async function (req, res) {
     projects: result.projects,
     skills: result.skills,
   })
-})
+});
+
+router.delete('/:id', async (req, res) => {
+  const userId = req.params.id;
+
+  const user = await User.findById(userId);
+
+  User.update(user, { show: false })
+    .then((result) => {
+      if (result.ok === 1) res.send('true');
+    })
+    .catch(() => res.send('false'));
+});
 
 module.exports = router;
