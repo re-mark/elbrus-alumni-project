@@ -1,4 +1,4 @@
-# Elbrus' alumni Project
+# Elbrus' Alumni Project
 
 Learning project, was implemented while studying in Elbrus Bootcamp.
 
