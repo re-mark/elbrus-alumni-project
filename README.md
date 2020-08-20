@@ -2,10 +2,16 @@
 
 **Выпускники@Elbrus.Bootcamp** - веб-приложение, площадка для выпускников Elbrus Coding Bootcamp и работодателей. Выпускник может создать профиль, заполнить его необходимой информацией, рассказать о реализованных проектах. Со стороны работодателя, можно просмотреть портфолио и связаться с выпускником.
 
-## Overview
-#### Main Page
+## Обзор
+#### Главная
 ![Main Page](https://github.com/re-mark/elbrus-alumni-project/blob/master/readme-assets/mainpage.png)
-#### Profiles
+#### Профили
 ![Main Page](https://github.com/re-mark/elbrus-alumni-project/blob/master/readme-assets/mainprof.png)
-#### Projile Page
+#### Страница профиля
 ![Main Page](https://github.com/re-mark/elbrus-alumni-project/blob/master/readme-assets/profile.png)
+
+## Запуск
+```js
+npm i 
+npm start
+```
