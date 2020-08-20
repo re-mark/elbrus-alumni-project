@@ -1,4 +1,4 @@
-# Elbrus' Alumni Project
+# <a href="https://elbrus-alumni-project.herokuapp.com/">Elbrus' Alumni Project</a>
 
 Learning project, was implemented during studying in Elbrus Bootcamp.
 
