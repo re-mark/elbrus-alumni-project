@@ -7,9 +7,9 @@
 #### Главная
 ![Main Page](https://github.com/re-mark/elbrus-alumni-project/blob/master/readme-assets/mainpage.png)
 #### Профили
-![Main Page](https://github.com/re-mark/elbrus-alumni-project/blob/master/readme-assets/mainprof.png)
+![Profiles](https://github.com/re-mark/elbrus-alumni-project/blob/master/readme-assets/mainprof.png)
 #### Страница профиля
-![Main Page](https://github.com/re-mark/elbrus-alumni-project/blob/master/readme-assets/profile.png)
+![Profile Page](https://github.com/re-mark/elbrus-alumni-project/blob/master/readme-assets/profile.png)
 
 ## Запуск
 ```js
@@ -19,4 +19,3 @@ npm start
 ## Следующие шаги
 * Разработка мобильной верстки
 * Реализация админ-панели
-
