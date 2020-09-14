@@ -1,7 +1,7 @@
 # <a href="https://elbrus-alumni-project.herokuapp.com/">Elbrus' Alumni Project</a>
 
 **Выпускники@Elbrus.Bootcamp** - веб-приложение, площадка для выпускников Elbrus Coding Bootcamp и работодателей. Выпускник может создать профиль, заполнить его необходимой информацией, рассказать о реализованных проектах. Со стороны работодателя, можно просмотреть портфолио и связаться с выпускником.
-Используемый стек: node.js, Express.js, MongoDB, Handlebars, Bootstrap. Реализован также функционал админа.
+Используемый стек: node.js, Express.js, MongoDB, Handlebars, Bootstrap. Дополнительно реализован функционал админа.
 
 ## Обзор
 #### Главная
