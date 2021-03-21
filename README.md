@@ -1,4 +1,4 @@
-# <a href="https://elbrus-alumni-project.herokuapp.com/">Elbrus' Alumni Project</a>
+# <h1 align="center"><a href="https://elbrus-alumni-project.herokuapp.com/">Elbrus' Alumni Project</a></h1>
 
 **Выпускники@Elbrus.Bootcamp** - веб-приложение, площадка для выпускников Elbrus Coding Bootcamp и работодателей.
 
